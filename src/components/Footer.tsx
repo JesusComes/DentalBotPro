@@ -1,243 +1,298 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Bot, Mail, Phone, ExternalLink } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { 
+  Tooth, 
+  Mail, 
+  Phone, 
+  MapPin,
+  Clock,
+  Shield,
+  Globe,
+  Calendar,
+  Star,
+  ArrowUp
+} from 'lucide-react';
+import { getTranslation, Language } from '@/lib/translations';
 
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear()
+interface FooterProps {
+  language: Language;
+}
+
+export default function Footer({ language }: FooterProps) {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const footerLinks = {
     company: [
-      { label: 'Über uns', href: '#about' },
-      { label: 'Karriere', href: '#careers' },
-      { label: 'Blog', href: '#blog' },
-      { label: 'Presse', href: '#press' },
-    ],
-    legal: [
-      { label: 'Datenschutz', href: '#privacy' },
-      { label: 'Impressum', href: '#imprint' },
-      { label: 'AGB', href: '#terms' },
-      { label: 'Cookies', href: '#cookies' },
+      { name: getTranslation('footer.privacy', language), href: '#privacy' },
+      { name: getTranslation('footer.imprint', language), href: '#imprint' },
+      { name: getTranslation('footer.terms', language), href: '#terms' },
     ],
     features: [
-      { label: '24/7 KI-Assistent', href: '#funktionen' },
-      { label: 'Mehrsprachiger Support', href: '#funktionen' },
-      { label: 'Automatische Terminbuchung', href: '#funktionen' },
-      { label: 'Deutsche Server', href: '#funktionen' },
-    ],
-    support: [
-      { label: 'Hilfe Center', href: '#help' },
-      { label: 'API Dokumentation', href: '#api' },
-      { label: 'System Status', href: '#status' },
-      { label: 'Community', href: '#community' },
-    ],
-  }
+      { name: getTranslation('footer.feature1', language), href: '#features' },
+      { name: getTranslation('footer.feature2', language), href: '#features' },
+      { name: getTranslation('footer.feature3', language), href: '#features' },
+      { name: getTranslation('footer.feature4', language), href: '#features' },
+    ]
+  };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId)
-    if (element) {
-      const headerHeight = 80
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY
-      window.scrollTo({
-        top: elementPosition - headerHeight,
-        behavior: 'smooth'
-      })
-    }
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  }
+  const stats = [
+    { icon: Clock, label: '24/7', description: 'Verfügbarkeit' },
+    { icon: Globe, label: '100+', description: 'Sprachen' },
+    { icon: Shield, label: 'DSGVO', description: 'Konform' },
+    { icon: Star, label: '99%', description: 'Uptime' },
+  ];
 
   return (
-    <footer className="bg-neutral-dark-gray text-white">
-      <div className="container-custom">
-        {/* Main Footer Content */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="py-16"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Company Info */}
-            <motion.div variants={itemVariants} className="lg:col-span-2">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-gradient-blue rounded-xl flex items-center justify-center mr-3 shadow-lg">
-                  <Bot className="w-6 h-6 text-white" />
+    <footer className="bg-gradient-to-br from-dark-gray via-text-dark to-dark-gray text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full" style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+                             linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        {/* Gradient Orbs */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-primary-blue/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-accent-teal/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
+        {/* Stats Section */}
+        <div className="py-16 border-b border-gray-700">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-16 h-16 bg-gradient-blue rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-8 h-8 text-white" />
                 </div>
-                <span className="text-2xl font-bold gradient-text">DentalBotPro</span>
+                <div className="text-2xl font-bold mb-1">{stat.label}</div>
+                <div className="text-gray-400 text-sm">{stat.description}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
+              {/* Logo */}
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="relative">
+                  <div className="w-12 h-12 bg-gradient-blue rounded-xl flex items-center justify-center shadow-lg">
+                    <Tooth className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent-teal rounded-full animate-pulse"></div>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold bg-gradient-blue bg-clip-text text-transparent">
+                    DentalBotPro
+                  </span>
+                  <span className="text-xs text-gray-400 font-medium">
+                    KI-Assistent für Zahnarztpraxen
+                  </span>
+                </div>
               </div>
 
-              <p className="text-neutral-light-gray mb-6 leading-relaxed">
-                Ihr KI-Assistent für moderne Zahnarztpraxen. 24/7 Patientenbetreuung auf höchstem Niveau 
-                mit tiefem Zahnmedizin-Fachwissen und intelligenter Automatisierung.
+              {/* Description */}
+              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                {getTranslation('footer.description', language)}
               </p>
 
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <motion.a
-                  whileHover={{ x: 5 }}
-                  href="mailto:info@dentalbotpro.com"
-                  className="flex items-center text-neutral-light-gray hover:text-white transition-colors group"
-                >
-                  <Mail className="w-5 h-5 mr-3 text-primary-blue group-hover:text-accent-teal transition-colors" />
-                  info@dentalbotpro.com
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ x: 5 }}
-                  href="tel:+4930120844300"
-                  className="flex items-center text-neutral-light-gray hover:text-white transition-colors group"
-                >
-                  <Phone className="w-5 h-5 mr-3 text-primary-blue group-hover:text-accent-teal transition-colors" />
-                  +49 (0) 30 120 844 30
-                </motion.a>
-              </div>
-
-              {/* Quality Badges */}
-              <div className="flex items-center space-x-4 mt-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1 text-xs font-medium">
-                  🇩🇪 Made in Germany
+              {/* Contact Information */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors duration-200">
+                    <Mail className="w-5 h-5 text-accent-teal" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">E-Mail</div>
+                    <a href="mailto:info@dentalbotpro.de" className="text-white hover:text-accent-teal transition-colors duration-200">
+                      info@dentalbotpro.de
+                    </a>
+                  </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1 text-xs font-medium">
-                  🔒 DSGVO-konform
+
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors duration-200">
+                    <Phone className="w-5 h-5 text-accent-teal" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Telefon</div>
+                    <a href="tel:+4930120844" className="text-white hover:text-accent-teal transition-colors duration-200">
+                      +49 (0) 30 120 844 30
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors duration-200">
+                    <MapPin className="w-5 h-5 text-accent-teal" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Standort</div>
+                    <div className="text-white">Berlin, Deutschland</div>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Features */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-bold mb-6">Features</h3>
+            {/* Links Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-bold mb-6 text-white">
+                {getTranslation('footer.links', language)}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-accent-teal transition-colors duration-200 flex items-center space-x-2 group"
+                    >
+                      <span className="w-2 h-2 bg-accent-teal rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      <span>{link.name}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Features Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-bold mb-6 text-white">
+                {getTranslation('footer.features', language)}
+              </h3>
               <ul className="space-y-3">
                 {footerLinks.features.map((link, index) => (
-                  <motion.li key={index} whileHover={{ x: 5 }}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="text-neutral-light-gray hover:text-white transition-colors text-left"
-                    >
-                      {link.label}
-                    </button>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Legal */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-bold mb-6">Rechtliches</h3>
-              <ul className="space-y-3">
-                {footerLinks.legal.map((link, index) => (
-                  <motion.li key={index} whileHover={{ x: 5 }}>
+                  <li key={index}>
                     <a
                       href={link.href}
-                      className="text-neutral-light-gray hover:text-white transition-colors flex items-center group"
+                      className="text-gray-300 hover:text-accent-teal transition-colors duration-200 flex items-center space-x-2 group"
                     >
-                      {link.label}
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="w-2 h-2 bg-accent-teal rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      <span>{link.name}</span>
                     </a>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-            </motion.div>
 
-            {/* Support */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-lg font-bold mb-6">Support</h3>
-              <ul className="space-y-3">
-                {footerLinks.support.map((link, index) => (
-                  <motion.li key={index} whileHover={{ x: 5 }}>
-                    <a
-                      href={link.href}
-                      className="text-neutral-light-gray hover:text-white transition-colors flex items-center group"
-                    >
-                      {link.label}
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  </motion.li>
-                ))}
-              </ul>
+              {/* Quick Actions */}
+              <div className="mt-8 space-y-3">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="w-full bg-gradient-blue text-white font-semibold py-3 px-6 rounded-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center space-x-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Demo buchen</span>
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={scrollToTop}
+                  className="w-full bg-white/10 border border-white/20 text-white font-medium py-3 px-6 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center space-x-2"
+                >
+                  <ArrowUp className="w-4 h-4" />
+                  <span>Nach oben</span>
+                </motion.button>
+              </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-white/10 py-8"
+          className="py-8 border-t border-gray-700"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             {/* Copyright */}
-            <div className="text-neutral-light-gray">
-              &copy; {currentYear} DentalBotPro. Alle Rechte vorbehalten.
+            <div className="text-gray-400 text-sm">
+              &copy; 2024 DentalBotPro. {getTranslation('footer.rights', language)}
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center space-x-6 text-sm text-neutral-light-gray">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-                99.9% Uptime
+            {/* Additional Info */}
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <div className="flex items-center space-x-2">
+                <Shield className="w-4 h-4 text-green-400" />
+                <span>DSGVO-konform</span>
               </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-                SSL Verschlüsselt
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4 text-blue-400" />
+                <span>Deutsche Server</span>
               </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                24/7 Überwacht
+              <div className="flex items-center space-x-2">
+                <Clock className="w-4 h-4 text-accent-teal" />
+                <span>24/7 Support</span>
               </div>
-            </div>
-
-            {/* Social Links - Placeholder */}
-            <div className="flex items-center space-x-4">
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
-              >
-                <span className="text-xs">📧</span>
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
-              >
-                <span className="text-xs">💼</span>
-              </motion.a>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Background Decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      {/* Scroll to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1, y: -5 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-blue rounded-full shadow-glow flex items-center justify-center z-50 hover:shadow-xl transition-all duration-300"
+      >
+        <ArrowUp className="w-6 h-6 text-white" />
+      </motion.button>
     </footer>
-  )
+  );
 }
-
-export default Footer
