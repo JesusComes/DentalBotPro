@@ -151,10 +151,8 @@ const IntegrationSection: React.FC = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className="mb-6 mt-4">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${getGradientClass(step.color)} shadow-lg`}>
-                      <step.icon className="w-8 h-8 text-white" />
-                    </div>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${getGradientClass(step.color)} rounded-2xl mb-6 shadow-lg`}>
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content */}
@@ -178,82 +176,70 @@ const IntegrationSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h3 className="text-2xl font-bold text-neutral-dark-gray mb-4">
-            Standard-Integration (Sofort verfügbar)
+            Kompatibel mit allen Praxisverwaltungssystemen
           </h3>
-          <p className="text-neutral-text-gray mb-8">
-            Kompatibel mit allen gängigen Zahnarztpraxissystemen:
+          <p className="text-neutral-text-gray mb-8 max-w-2xl mx-auto">
+            Keine komplizierte Integration nötig. DentalBotPro arbeitet mit Ihrer bestehenden Software.
           </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+          
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 1 }}
+          >
             {systems.map((system, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ delay: 0.9 + index * 0.1 }}
-                className="bg-white rounded-xl py-4 px-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ delay: 1 + index * 0.1 }}
+                className="px-6 py-3 bg-white rounded-full shadow-soft border border-neutral-light-gray text-neutral-dark-gray font-medium hover:shadow-medium transition-shadow duration-300"
               >
-                <span className="font-medium text-neutral-dark-gray">{system}</span>
+                {system}
               </motion.div>
             ))}
-          </div>
-
-          {/* Premium Option */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 1.2 }}
-            className="bg-gradient-to-r from-blue-50 to-teal-50 border border-blue-200 rounded-2xl p-8"
-          >
-            <h4 className="text-xl font-bold gradient-text mb-4">
-              Premium-Option: Direkt-Integration
-            </h4>
-            <p className="text-neutral-text-gray max-w-3xl mx-auto">
-              Für moderne Cloud-Systeme (CGM LIFE, DocCirrus) bieten wir auf Wunsch vollautomatische 
-              Synchronisation - Termine erscheinen direkt in Ihrer Zahnarztpraxissoftware ohne manuelle Übertragung.
-            </p>
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* Advantage Section */}
+        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 1.4 }}
-          className="bg-white rounded-2xl p-8 shadow-soft"
+          transition={{ delay: 1.2 }}
+          className="text-center bg-gradient-to-br from-primary-blue to-primary-teal rounded-3xl p-12 text-white"
         >
-          <div className="flex items-start mb-6">
-            <Zap className="w-8 h-8 text-yellow-500 mr-4 mt-1 flex-shrink-0" />
-            <h3 className="text-2xl font-bold text-neutral-dark-gray">
-              Der Vorteil unseres Ansatzes
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <p className="text-neutral-text-gray leading-relaxed mb-4">
-                Während andere Lösungen an veralteten Schnittstellen scheitern, funktioniert DentalBotPro 
-                universell - unabhängig davon, wie alt oder modern Ihre Zahnarztpraxissoftware ist. Sie erhalten 
-                strukturierte, hochwertige Patientendaten ohne technisches Risiko oder IT-Projekte.
-              </p>
-              <div className="flex items-center text-green-700 font-semibold">
-                <Shield className="w-5 h-5 mr-2" />
-                <span>100% Risikofrei & Sofort einsatzbereit</span>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+              <div className="flex items-center justify-center">
+                <div className="flex items-center space-x-2">
+                  <Shield className="w-8 h-8" />
+                  <span className="text-lg font-semibold">100% DSGVO-konform</span>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-center">
+                <div className="flex items-center space-x-2">
+                  <Clock className="w-8 h-8" />
+                  <span className="text-lg font-semibold">5 Minuten Setup</span>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-center">
+                <div className="flex items-center space-x-2">
+                  <Zap className="w-8 h-8" />
+                  <span className="text-lg font-semibold">Sofort einsatzbereit</span>
+                </div>
               </div>
             </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6">
-              <div className="flex items-center mb-3">
-                <Clock className="w-6 h-6 text-green-600 mr-2" />
-                <span className="font-bold text-green-700">Typischer Zeitgewinn:</span>
-              </div>
-              <p className="text-neutral-text-gray">
-                Eine Terminanfrage in Ihrer Software zu bestätigen dauert <strong>10 Sekunden</strong> - 
-                das Telefonat hätte <strong>5 Minuten</strong> gedauert.
-              </p>
-              <div className="text-green-700 font-bold text-lg mt-2">
+            
+            <div className="mt-8 pt-8 border-t border-white/20">
+              <h4 className="text-2xl font-bold mb-4">
+                Bereit für die Zukunft Ihrer Praxis?
+              </h4>
+              <p className="text-lg opacity-90 mb-6">
                 Sie sparen 90% der Zeit bei voller Kontrolle.
-              </div>
+              </p>
             </div>
           </div>
         </motion.div>
