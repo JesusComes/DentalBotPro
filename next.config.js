@@ -4,10 +4,15 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['images.unsplash.com'],
+    unoptimized: false,
   },
-  experimental: {
-    optimizeCss: true
-  }
+  // Remove experimental features that might cause build issues
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
 }
 
 module.exports = nextConfig

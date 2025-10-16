@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -10,28 +10,9 @@ import AboutModal from '../components/AboutModal'
 
 export default function Home() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
 
   const openAboutModal = () => setIsAboutModalOpen(true)
   const closeAboutModal = () => setIsAboutModalOpen(false)
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-blue">
-        <div className="text-center text-white">
-          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-            <i className="fas fa-robot text-2xl"></i>
-          </div>
-          <h2 className="text-2xl font-bold mb-2">DentalBotPro</h2>
-          <p className="text-white/80">Wird geladen...</p>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <>
