@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "benefits": "Vorteile",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "demo": "Kostenlose Demo"
+  },
+  "hero": {
+    "title": "KI-gestützter Zahnarzt-Assistent",
+    "subtitle": "Revolutionieren Sie Ihre Zahnarztpraxis mit intelligenter Automatisierung",
+    "description": "Optimieren Sie die Patientenkommunikation, Terminplanung und Behandlungsempfehlungen mit unserer fortschrittlichen KI-Technologie, die speziell für Zahnärzte entwickelt wurde.",
+    "cta": "Kostenlose Testversion",
+    "watch_demo": "Demo ansehen"
+  },
+  "problems": {
+    "title": "Häufige Herausforderungen in Zahnarztpraxen",
+    "subtitle": "Zahnarztpraxen stehen vor zahlreichen betrieblichen Herausforderungen, die Effizienz und Patientenzufriedenheit beeinträchtigen",
+    "item1": "Manuelle Terminplanung führt zu Konflikten und Ineffizienzen",
+    "item2": "Wiederholende Patientenkommunikation verbraucht wertvolle Arbeitszeit",
+    "item3": "Behandlungsplanung erfordert umfangreiche Dokumentation und Nachverfolgung",
+    "item4": "Patientenaufklärung und Nachsorge-Anweisungen sind zeitaufwändig"
+  },
+  "solution": {
+    "title": "Intelligente KI-Lösungen für moderne Zahnmedizin",
+    "subtitle": "Unser KI-Assistent deckt jeden Aspekt des Praxismanagements ab",
+    "automation": {
+      "title": "Intelligente Automatisierung",
+      "description": "Automatisieren Sie Routineaufgaben und konzentrieren Sie sich auf die Patientenversorgung"
+    },
+    "communication": {
+      "title": "Intelligente Kommunikation",
+      "description": "KI-gestützte Patienteninteraktionen und Nachverfolgung"
+    },
+    "insights": {
+      "title": "Datengestützte Erkenntnisse",
+      "description": "Analysen zur Optimierung Ihrer Praxisleistung"
+    }
+  },
+  "features": {
+    "title": "Leistungsstarke Funktionen für zahnärztliche Exzellenz",
+    "subtitle": "Alles was Sie brauchen, um eine moderne, effiziente Zahnarztpraxis zu führen",
+    "scheduling": {
+      "title": "Intelligente Terminplanung",
+      "description": "KI-gestütztes Terminmanagement mit Konflikterkennung und Optimierung"
+    },
+    "communication": {
+      "title": "Patientenkommunikation",
+      "description": "Automatisierte Erinnerungen, Nachverfolgung und Bereitstellung von Lehrinhalten"
+    },
+    "treatment": {
+      "title": "Behandlungsplanung",
+      "description": "KI-unterstütztes Diagnose- und Behandlungsempfehlungssystem"
+    },
+    "records": {
+      "title": "Digitale Aufzeichnungen",
+      "description": "Umfassende Patientenhistorie und Behandlungsverfolgung"
+    },
+    "billing": {
+      "title": "Automatisierte Abrechnung",
+      "description": "Optimierte Versicherungsansprüche und Zahlungsabwicklung"
+    },
+    "analytics": {
+      "title": "Praxis-Analytik",
+      "description": "Echtzeiteinblicke in Praxisleistung und Wachstumsmöglichkeiten"
+    }
+  },
+  "benefits": {
+    "title": "Transformieren Sie Ihre Praxis heute",
+    "subtitle": "Erleben Sie die Vorteile des KI-gestützten Zahnarztpraxis-Managements",
+    "efficiency": {
+      "title": "Effizienz steigern",
+      "description": "Reduzieren Sie administrative Aufgaben um bis zu 70% und konzentrieren Sie sich auf die Patientenversorgung",
+      "stat": "70% Zeit gespart"
+    },
+    "satisfaction": {
+      "title": "Patientenzufriedenheit verbessern",
+      "description": "Verbesserte Kommunikation und personalisierte Betreuungserfahrungen",
+      "stat": "95% Zufriedenheitsrate"
+    },
+    "revenue": {
+      "title": "Umsatz steigern",
+      "description": "Optimieren Sie die Terminplanung und reduzieren Sie Ausfälle, um das Praxiseinkommen zu maximieren",
+      "stat": "30% Umsatzsteigerung"
+    }
+  },
+  "howItWorks": {
+    "title": "Wie es funktioniert",
+    "subtitle": "Starten Sie mit unserem KI-Assistenten in drei einfachen Schritten",
+    "step1": {
+      "title": "Schnelle Einrichtung",
+      "description": "Verbinden Sie Ihre bestehenden Systeme und konfigurieren Sie KI-Einstellungen"
+    },
+    "step2": {
+      "title": "KI-Training",
+      "description": "Unsere KI lernt Ihre Praxismuster und Patientenpräferenzen"
+    },
+    "step3": {
+      "title": "Live gehen",
+      "description": "Profitieren Sie von automatisierten Arbeitsabläufen und intelligenter Unterstützung"
+    }
+  },
+  "pricing": {
+    "title": "Wählen Sie Ihren Plan",
+    "subtitle": "Flexible Preisoptionen für Praxen jeder Größe",
+    "monthly": "Monatlich",
+    "annually": "Jährlich",
+    "starter": {
+      "name": "Starter",
+      "price": "99€",
+      "period": "/Monat",
+      "description": "Perfekt für kleine Praxen",
+      "features": [
+        "Bis zu 500 Patienten",
+        "Basis-Terminautomatisierung",
+        "E-Mail-Benachrichtigungen",
+        "Standard-Support",
+        "1 Benutzerkonto"
+      ],
+      "cta": "Kostenlose Testversion"
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "299€",
+      "period": "/Monat",
+      "description": "Ideal für wachsende Praxen",
+      "popular": "Beliebteste",
+      "features": [
+        "Bis zu 2.000 Patienten",
+        "Erweiterte KI-Terminplanung",
+        "SMS + E-Mail-Automatisierung",
+        "Behandlungsplanungs-KI",
+        "Prioritäts-Support",
+        "5 Benutzerkonten",
+        "Analyse-Dashboard"
+      ],
+      "cta": "Kostenlose Testversion"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "699€",
+      "period": "/Monat",
+      "description": "Für große Praxen und Kliniken",
+      "features": [
+        "Unbegrenzte Patienten",
+        "Vollständige KI-Automatisierungssuite",
+        "Multi-Kanal-Kommunikation",
+        "Individuelles KI-Training",
+        "Dedizierter Support",
+        "Unbegrenzte Benutzer",
+        "Erweiterte Analysen",
+        "API-Zugang"
+      ],
+      "cta": "Vertrieb kontaktieren"
+    }
+  },
+  "integration": {
+    "title": "Nahtlose Integrationen",
+    "subtitle": "Verbinden Sie sich mit Ihrer bestehenden Zahnarzt-Software und Tools",
+    "description": "Unser KI-Assistent integriert sich mit beliebten Zahnarztpraxis-Managementsystemen und gewährleistet einen reibungslosen Übergang ohne Unterbrechung Ihrer aktuellen Arbeitsabläufe."
+  },
+  "testimonials": {
+    "title": "Was Zahnmediziner sagen",
+    "subtitle": "Schließen Sie sich Tausenden zufriedener Zahnmediziner an",
+    "testimonial1": {
+      "text": "Dieser KI-Assistent hat unsere Praxis transformiert. Wir haben die Verwaltungszeit um 60% reduziert und unsere Patienten lieben die automatisierte Kommunikation.",
+      "author": "Dr. Sarah Johnson",
+      "position": "Zahnärztin, Familienzahnheilkunde"
+    },
+    "testimonial2": {
+      "text": "Allein die Terminautomatisierung hat uns jede Woche Stunden gespart. Die KI lernt unsere Präferenzen und macht unglaublich genaue Vorschläge.",
+      "author": "Mark Thompson",
+      "position": "Praxismanager"
+    },
+    "testimonial3": {
+      "text": "Die Patientenzufriedenheit war noch nie höher. Die personalisierten Nachverfolgungen und Lehrmaterialien haben wirklich einen Unterschied gemacht.",
+      "author": "Dr. Michael Chen",
+      "position": "Kieferorthopäde"
+    }
+  },
+  "contact": {
+    "title": "Starten Sie noch heute",
+    "subtitle": "Bereit, Ihre Zahnarztpraxis zu transformieren? Kontaktieren Sie uns für eine personalisierte Demo.",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "practice": "Praxisname",
+      "message": "Nachricht",
+      "submit": "Nachricht senden"
+    }
+  },
+  "footer": {
+    "company": "DentalBot Pro",
+    "description": "KI-gestützte Lösungen für moderne Zahnarztpraxen",
+    "quickLinks": "Schnelllinks",
+    "product": "Produkt",
+    "support": "Support",
+    "legal": "Rechtliches",
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "demo": "Demo",
+      "help": "Hilfe-Center",
+      "documentation": "Dokumentation",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen"
+    },
+    "copyright": "© 2025 DentalBot Pro. Alle Rechte vorbehalten."
+  }
+}

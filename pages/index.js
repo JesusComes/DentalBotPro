@@ -1,98 +1,55 @@
-import { useState } from 'react'
-import Head from 'next/head'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Features from '../components/Features'
-import Testimonials from '../components/Testimonials'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
-import AboutModal from '../components/AboutModal'
+import React from 'react';
+import Head from 'next/head';
+import { useLanguage } from '../contexts/LanguageContext';
+
+// Import all components
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Problems from '../components/Problems';
+import Solution from '../components/Solution';
+import Features from '../components/Features';
+import Benefits from '../components/Benefits';
+import HowItWorks from '../components/HowItWorks';
+import Pricing from '../components/Pricing';
+import Integration from '../components/Integration';
+import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 export default function Home() {
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-
-  const openAboutModal = () => setIsAboutModalOpen(true)
-  const closeAboutModal = () => setIsAboutModalOpen(false)
+  const { t } = useLanguage();
 
   return (
     <>
       <Head>
-        <title>DentalBotPro | KI-Assistent für Zahnarztpraxen</title>
-        <meta name="description" content="Verpassen Sie nie wieder einen Patientenanruf! Ihr intelligenter Assistent mit umfassendem Zahnmedizin-Wissen beantwortet Fachfragen, erklärt Behandlungen und bucht Termine." />
+        <title>{t('hero.title', 'AI-Powered Dental Assistant')} | DentalBot Pro</title>
+        <meta name="description" content={t('hero.description', 'Streamline patient communication, appointment scheduling, and treatment recommendations with our advanced AI technology designed specifically for dental professionals.')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="DentalBot Pro - AI-Powered Dental Assistant" />
+        <meta property="og:description" content="Revolutionize your dental practice with intelligent automation" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/logo.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="min-h-screen bg-white">
-        {/* Header */}
-        <Header onOpenAbout={openAboutModal} />
-
-        {/* Main Content */}
+        <Header />
+        
         <main>
-          {/* Hero Section */}
           <Hero />
-
-          {/* Features Section - includes Problems, Solution, and Main Features */}
+          <Problems />
+          <Solution />
           <Features />
-
-          {/* Benefits/Testimonials Section */}
+          <Benefits />
+          <HowItWorks />
+          <Pricing />
+          <Integration />
           <Testimonials />
-
-          {/* Pricing Demo Section - Not explicitly shown in original but can be added */}
-          <section className="py-20 bg-neutral-light" id="preise">
-            <div className="container mx-auto px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="bg-white rounded-2xl p-12 shadow-large border border-neutral-medium/20">
-                  <div className="w-20 h-20 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-8">
-                    <i className="fas fa-play text-3xl text-white"></i>
-                  </div>
-                  
-                  <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-6">
-                    Erleben Sie DentalBotPro live in Aktion
-                  </h2>
-                  
-                  <p className="text-xl text-neutral-text mb-8 leading-relaxed">
-                    Sehen Sie in einer persönlichen Demo, wie unser KI-Assistent Ihre Zahnarztpraxis 
-                    revolutioniert und Ihnen dabei hilft, mehr Patienten zu gewinnen und zu betreuen.
-                  </p>
-                  
-                  <div className="bg-neutral-light rounded-xl p-8 mb-8 border-2 border-dashed border-neutral-medium">
-                    <i className="fas fa-video text-4xl text-primary-blue mb-4 block"></i>
-                    <p className="text-lg text-neutral-text">
-                      Hier wird Ihr personalisiertes DentalBotPro Demo-Video angezeigt
-                    </p>
-                  </div>
-                  
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById('kontakt')
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' })
-                      }
-                    }}
-                    className="btn-primary text-lg px-10 py-4"
-                  >
-                    <span className="mr-2">Jetzt kostenlose Demo buchen</span>
-                    <i className="fas fa-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Contact Section */}
           <Contact />
         </main>
-
-        {/* Footer */}
+        
         <Footer />
-
-        {/* About Modal */}
-        <AboutModal 
-          isOpen={isAboutModalOpen} 
-          onClose={closeAboutModal} 
-        />
       </div>
     </>
-  )
+  );
 }

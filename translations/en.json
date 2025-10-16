@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "features": "Features",
+    "benefits": "Benefits",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "demo": "Kostenlose Demo"
+  },
+  "hero": {
+    "title": "AI-Powered Dental Assistant",
+    "subtitle": "Revolutionize your dental practice with intelligent automation",
+    "description": "Streamline patient communication, appointment scheduling, and treatment recommendations with our advanced AI technology designed specifically for dental professionals.",
+    "cta": "Start Free Trial",
+    "watch_demo": "Watch Demo"
+  },
+  "problems": {
+    "title": "Common Challenges in Dental Practices",
+    "subtitle": "Dental practices face numerous operational challenges that impact efficiency and patient satisfaction",
+    "item1": "Manual appointment scheduling leads to conflicts and inefficiencies",
+    "item2": "Repetitive patient communication consumes valuable staff time",
+    "item3": "Treatment planning requires extensive documentation and follow-up",
+    "item4": "Patient education and aftercare instructions are time-consuming"
+  },
+  "solution": {
+    "title": "Smart AI Solutions for Modern Dentistry",
+    "subtitle": "Our AI assistant addresses every aspect of dental practice management",
+    "automation": {
+      "title": "Intelligent Automation",
+      "description": "Automate routine tasks and focus on patient care"
+    },
+    "communication": {
+      "title": "Smart Communication",
+      "description": "AI-powered patient interactions and follow-ups"
+    },
+    "insights": {
+      "title": "Data-Driven Insights",
+      "description": "Analytics to optimize your practice performance"
+    }
+  },
+  "features": {
+    "title": "Powerful Features for Dental Excellence",
+    "subtitle": "Everything you need to run a modern, efficient dental practice",
+    "scheduling": {
+      "title": "Smart Scheduling",
+      "description": "AI-powered appointment management with conflict detection and optimization"
+    },
+    "communication": {
+      "title": "Patient Communication",
+      "description": "Automated reminders, follow-ups, and educational content delivery"
+    },
+    "treatment": {
+      "title": "Treatment Planning",
+      "description": "AI-assisted diagnosis and treatment recommendation system"
+    },
+    "records": {
+      "title": "Digital Records",
+      "description": "Comprehensive patient history and treatment tracking"
+    },
+    "billing": {
+      "title": "Automated Billing",
+      "description": "Streamlined insurance claims and payment processing"
+    },
+    "analytics": {
+      "title": "Practice Analytics",
+      "description": "Real-time insights into practice performance and growth opportunities"
+    }
+  },
+  "benefits": {
+    "title": "Transform Your Practice Today",
+    "subtitle": "Experience the advantages of AI-powered dental practice management",
+    "efficiency": {
+      "title": "Increase Efficiency",
+      "description": "Reduce administrative tasks by up to 70% and focus on patient care",
+      "stat": "70% time saved"
+    },
+    "satisfaction": {
+      "title": "Improve Patient Satisfaction",
+      "description": "Enhanced communication and personalized care experiences",
+      "stat": "95% satisfaction rate"
+    },
+    "revenue": {
+      "title": "Boost Revenue",
+      "description": "Optimize scheduling and reduce no-shows to maximize practice income",
+      "stat": "30% revenue increase"
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Get started with our AI assistant in three simple steps",
+    "step1": {
+      "title": "Quick Setup",
+      "description": "Connect your existing systems and configure AI preferences"
+    },
+    "step2": {
+      "title": "AI Training",
+      "description": "Our AI learns your practice patterns and patient preferences"
+    },
+    "step3": {
+      "title": "Go Live",
+      "description": "Start benefiting from automated workflows and intelligent assistance"
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Flexible pricing options to fit practices of all sizes",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "starter": {
+      "name": "Starter",
+      "price": "$99",
+      "period": "/month",
+      "description": "Perfect for small practices",
+      "features": [
+        "Up to 500 patients",
+        "Basic scheduling automation",
+        "Email notifications",
+        "Standard support",
+        "1 user account"
+      ],
+      "cta": "Start Free Trial"
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$299",
+      "period": "/month",
+      "description": "Ideal for growing practices",
+      "popular": "Most Popular",
+      "features": [
+        "Up to 2,000 patients",
+        "Advanced AI scheduling",
+        "SMS + Email automation",
+        "Treatment planning AI",
+        "Priority support",
+        "5 user accounts",
+        "Analytics dashboard"
+      ],
+      "cta": "Start Free Trial"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$699",
+      "period": "/month",
+      "description": "For large practices and clinics",
+      "features": [
+        "Unlimited patients",
+        "Full AI automation suite",
+        "Multi-channel communication",
+        "Custom AI training",
+        "Dedicated support",
+        "Unlimited users",
+        "Advanced analytics",
+        "API access"
+      ],
+      "cta": "Contact Sales"
+    }
+  },
+  "integration": {
+    "title": "Seamless Integrations",
+    "subtitle": "Connect with your existing dental software and tools",
+    "description": "Our AI assistant integrates with popular dental practice management systems, ensuring a smooth transition without disrupting your current workflows."
+  },
+  "testimonials": {
+    "title": "What Dental Professionals Say",
+    "subtitle": "Join thousands of satisfied dental professionals",
+    "testimonial1": {
+      "text": "This AI assistant has transformed our practice. We've reduced admin time by 60% and our patients love the automated communication.",
+      "author": "Dr. Sarah Johnson",
+      "position": "DDS, Family Dentistry"
+    },
+    "testimonial2": {
+      "text": "The scheduling automation alone has saved us hours every week. The AI learns our preferences and makes incredibly accurate suggestions.",
+      "author": "Mark Thompson",
+      "position": "Practice Manager"
+    },
+    "testimonial3": {
+      "text": "Patient satisfaction has never been higher. The personalized follow-ups and education materials have really made a difference.",
+      "author": "Dr. Michael Chen",
+      "position": "Orthodontist"
+    }
+  },
+  "contact": {
+    "title": "Get Started Today",
+    "subtitle": "Ready to transform your dental practice? Contact us for a personalized demo.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "practice": "Practice Name",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "company": "DentalBot Pro",
+    "description": "AI-powered solutions for modern dental practices",
+    "quickLinks": "Quick Links",
+    "product": "Product",
+    "support": "Support",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "demo": "Demo",
+      "help": "Help Center",
+      "documentation": "Documentation",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2025 DentalBot Pro. All rights reserved."
+  }
+}

@@ -1,20 +1,13 @@
-import '../styles/globals.css'
-import '../styles/custom.css'
-import { Inter } from 'next/font/google'
-import { LanguageProvider } from '../contexts/LanguageContext'
+import { LanguageProvider } from '../contexts/LanguageContext';
+import '../styles/globals.css';
+import '../styles/custom.css';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-export default function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <LanguageProvider>
-      <main className={`${inter.variable} font-sans`}>
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
     </LanguageProvider>
-  )
+  );
 }
+
+export default MyApp;

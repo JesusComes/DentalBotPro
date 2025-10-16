@@ -1,61 +1,38 @@
-/* Custom animations and effects */
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* Custom CSS for DentalBot Pro */
+
+.gradient-dental {
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
 }
 
-.animated-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
+.text-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hover-lift {
+  transition: transform 0.3s ease;
 }
 
-.pulse-glow {
-  animation: pulseGlow 2s infinite;
+.hover-lift:hover {
+  transform: translateY(-5px);
 }
 
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(10, 102, 194, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(10, 102, 194, 0.6); }
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.stagger-animation {
-  animation-delay: calc(var(--stagger-delay, 0) * 100ms);
+.hero-bg {
+  background: linear-gradient(135deg, #0c4a6e 0%, #134e4a 100%);
 }
 
-/* Scroll reveal animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+.section-padding {
+  padding: 5rem 0;
 }
 
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #0A66C2, #4F9CF9);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #085fa8, #3d87e6);
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 0;
+  }
 }

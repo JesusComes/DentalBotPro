@@ -2,17 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
   images: {
-    domains: ['images.unsplash.com'],
-    unoptimized: false,
+    unoptimized: true
   },
-  // Remove experimental features that might cause build issues
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
+  output: 'export'
 }
 
 module.exports = nextConfig
