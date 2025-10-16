@@ -1,136 +1,120 @@
-# DentalBotPro - Modern Landing Page
+# DentalBotPro
 
-A stunning, modern landing page for DentalBotPro - AI assistant for dental practices. Built with React, Next.js, and Tailwind CSS featuring smooth animations, multilingual support, and a responsive design.
+Ein moderner, professioneller KI-Assistent für Zahnarztpraxen, entwickelt mit Next.js, React und Tailwind CSS.
 
 ## 🚀 Features
 
-- **Modern Design**: Brutally modern and visually stunning interface
-- **Multilingual Support**: German, English, and French translations
-- **Responsive**: Optimized for all device sizes
-- **Smooth Animations**: Framer Motion powered animations
-- **Performance Optimized**: Next.js with SSG/SSR capabilities
-- **SEO Ready**: Meta tags, structured data, and sitemap
-- **Contact Form**: Interactive demo booking form
-- **Interactive Components**: Hover effects, smooth scrolling, and micro-interactions
+- **Responsive Design**: Vollständig responsive für Desktop, Tablet und Mobile
+- **Modern UI/UX**: Brutaler moderner Look mit eleganten Animationen
+- **Performance**: Optimiert für schnelle Ladezeiten und SEO
+- **Accessibility**: ARIA-konform und semantisches HTML
+- **Animations**: Smooth Framer Motion Animationen
+- **TypeScript Ready**: Kann einfach zu TypeScript migriert werden
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **TypeScript**: Full type safety
+- **Icons**: Font Awesome
 - **Fonts**: Inter (Google Fonts)
 
 ## 📦 Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd dentalbotpro-modern
-   ```
+```bash
+# Abhängigkeiten installieren
+npm install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+# Entwicklungsserver starten
+npm run dev
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
+# Für Produktion bauen
+npm run build
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Produktionsserver starten
+npm start
+```
+
+## 🏗️ Projektstruktur
+
+```
+DentalBotPro/
+├── components/          # React Komponenten
+│   ├── Header.js       # Navigation und Logo
+│   ├── Hero.js         # Hero Section
+│   ├── Features.js     # Features und Probleme
+│   ├── Testimonials.js # Vorteile Section
+│   ├── Contact.js      # Kontakt Formular
+│   ├── Footer.js       # Footer
+│   └── AboutModal.js   # Über uns Modal
+├── pages/              # Next.js Seiten
+│   ├── _app.js        # App Wrapper
+│   ├── _document.js   # HTML Document
+│   └── index.js       # Hauptseite
+├── public/             # Statische Assets
+├── styles/             # CSS Dateien
+│   ├── globals.css    # Global Styles
+│   └── custom.css     # Custom Animations
+└── ...config files
+```
+
+## 🎨 Design System
+
+### Farben
+- **Primary Blue**: #0A66C2
+- **Accent Teal**: #00B4A6
+- **Accent Purple**: #8B5CF6
+- **Accent Orange**: #F59E0B
+- **Accent Pink**: #EC4899
+
+### Gradients
+- `bg-gradient-blue`: Blauer Gradient
+- `bg-gradient-teal`: Teal Gradient
+- `bg-gradient-purple`: Lila Gradient
+
+### Komponenten
+- `btn-primary`: Primärer Button
+- `btn-secondary`: Sekundärer Button
+- `card`: Standard Karte
+- `gradient-text`: Gradient Text
+
+## 📱 Responsive Design
+
+Das Layout passt sich automatisch an verschiedene Bildschirmgrößen an:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px  
+- **Desktop**: > 1024px
+
+## 🔧 Anpassungen
+
+### Logo ändern
+Ersetzen Sie `/public/logo.png` mit Ihrem eigenen Logo.
+
+### Farben anpassen
+Bearbeiten Sie `tailwind.config.js` um die Farbpalette anzupassen.
+
+### Inhalte ändern
+Alle Texte befinden sich in den entsprechenden Komponenten-Dateien.
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-1. Push your code to a Git repository
-2. Import your project on [Vercel](https://vercel.com)
-3. Vercel will automatically detect Next.js and deploy
+### Vercel (Empfohlen)
+1. Repository auf GitHub pushen
+2. Mit Vercel verbinden
+3. Automatisches Deployment
 
-### Netlify
-1. Build the project: `npm run build`
-2. Deploy the `out` folder to Netlify
-
-### Manual Deployment
-1. Build the project: `npm run build`
-2. Start the production server: `npm start`
-
-## 🌐 Multilingual Support
-
-The website supports three languages:
-- **German (de)**: Default language
-- **English (en)**: Full translation
-- **French (fr)**: Full translation
-
-Language switching is handled through the language selector in the header.
-
-## 📱 Sections
-
-1. **Hero**: Eye-catching intro with animated elements
-2. **Problems**: Pain points for dental practices
-3. **Solution**: How DentalBotPro solves these issues
-4. **Features**: Detailed feature showcase
-5. **Pricing**: Three-tier pricing structure
-6. **Contact**: Demo booking form
-7. **Footer**: Company info and links
-
-## 🎨 Customization
-
-### Colors
-The color scheme is defined in `tailwind.config.js`:
-- Primary Blue: `#0A66C2`
-- Accent Teal: `#00B4A6`
-- Additional accent colors for variety
-
-### Content
-All content is managed through the translation system in `src/lib/translations.ts`. Update the translations object to modify text content.
-
-### Styling
-- Global styles: `src/app/globals.css`
-- Component-specific styling: Tailwind classes within components
-- Custom animations: Defined in Tailwind config
-
-## 📧 Contact Information
-
-The website includes the following contact details:
-- **Email**: info@dentalbotpro.de
-- **Phone**: +49 (0) 30 120 844 30
-- **Location**: Berlin, Deutschland
-
-## 🔧 Environment Variables
-
-Create a `.env.local` file for any environment-specific variables:
-```
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+### Andere Plattformen
+```bash
+npm run build
+npm start
 ```
 
-## 📄 License
+## 📧 Kontakt
 
-This project was created by MiniMax Agent. All rights reserved.
+Bei Fragen oder Anpassungswünschen:
+- **Email**: info@dentalbotpro.com
+- **Telefon**: +49 (0) 30 120 844 30
 
-## 🤝 Contributing
+## 📄 Lizenz
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-For support or questions about this implementation, please contact the development team.
-
----
-
-**Built with ❤️ by MiniMax Agent**
+© 2024 DentalBotPro. Alle Rechte vorbehalten.

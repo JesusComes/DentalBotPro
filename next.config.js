@@ -6,8 +6,8 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
   },
   experimental: {
-    optimizeCss: true,
-  },
+    optimizeCss: true
+  }
 }
 
 module.exports = nextConfig
