@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
 
 const Features = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const problems = [
     {
@@ -143,10 +138,10 @@ const Features = () => {
           </motion.div>
 
           <motion.div
-            ref={ref}
             variants={containerVariants}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, threshold: 0.1 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {problems.map((problem, index) => (
