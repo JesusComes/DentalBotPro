@@ -6,6 +6,9 @@
     "contact": "Kontakt",
     "demo": "Kostenlose Demo"
   },
+  "header": {
+    "demo": "Kostenlose Demo"
+  },
   "hero": {
     "title": "KI-gestützter Zahnarzt-Assistent",
     "subtitle": "Revolutionieren Sie Ihre Zahnarztpraxis mit intelligenter Automatisierung",

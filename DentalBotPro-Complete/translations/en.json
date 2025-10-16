@@ -6,6 +6,9 @@
     "contact": "Contact",
     "demo": "Kostenlose Demo"
   },
+  "header": {
+    "demo": "Free Demo"
+  },
   "hero": {
     "title": "AI-Powered Dental Assistant",
     "subtitle": "Revolutionize your dental practice with intelligent automation",

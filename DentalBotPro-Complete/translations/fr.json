@@ -6,6 +6,9 @@
     "contact": "Contact",
     "demo": "Démo Gratuite"
   },
+  "header": {
+    "demo": "Démo Gratuite"
+  },
   "hero": {
     "title": "Assistant Dentaire Alimenté par IA",
     "subtitle": "Révolutionnez votre cabinet dentaire avec l'automatisation intelligente",
