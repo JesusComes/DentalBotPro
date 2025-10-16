@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
+import LanguageWidget from './LanguageWidget'
 
 const Header = ({ onOpenAbout }) => {
+  const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -30,11 +33,11 @@ const Header = ({ onOpenAbout }) => {
   }
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'loesung', label: 'Lösung' },
-    { id: 'funktionen', label: 'Funktionen' },
-    { id: 'preise', label: 'Preise' },
-    { id: 'kontakt', label: 'Kontakt' },
+    { id: 'home', label: t('nav.home') },
+    { id: 'loesung', label: t('nav.solution') },
+    { id: 'funktionen', label: t('nav.features') },
+    { id: 'preise', label: t('nav.pricing') },
+    { id: 'kontakt', label: t('nav.contact') },
   ]
 
   return (
@@ -87,10 +90,13 @@ const Header = ({ onOpenAbout }) => {
               onClick={onOpenAbout}
               className="relative text-neutral-dark font-medium hover:text-primary-blue transition-colors duration-300 group"
             >
-              Über uns
+              {t('nav.about')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-blue transition-all duration-300 group-hover:w-full"></span>
             </motion.button>
           </nav>
+
+          {/* Language Widget */}
+          <LanguageWidget />
 
           {/* CTA Button */}
           <motion.button
@@ -102,7 +108,7 @@ const Header = ({ onOpenAbout }) => {
             onClick={() => scrollToSection('kontakt')}
             className="hidden lg:block btn-primary shadow-lg hover:shadow-xl"
           >
-            Kostenlose Demo
+            {t('nav.demo')}
           </motion.button>
 
           {/* Mobile Menu Button */}
@@ -138,13 +144,13 @@ const Header = ({ onOpenAbout }) => {
                   onClick={onOpenAbout}
                   className="block w-full text-left py-2 px-4 text-neutral-dark hover:text-primary-blue hover:bg-primary-light rounded-lg transition-colors duration-200"
                 >
-                  Über uns
+                  {t('nav.about')}
                 </button>
                 <button
                   onClick={() => scrollToSection('kontakt')}
                   className="w-full btn-primary mt-4"
                 >
-                  Kostenlose Demo
+                  {t('nav.demo')}
                 </button>
               </div>
             </motion.div>

@@ -1,53 +1,25 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Features = () => {
+  const { t } = useLanguage()
 
   const problems = [
     {
       icon: 'fas fa-phone-slash',
-      title: 'Verpasste Anrufe nach Feierabend',
-      description: 'Das Problem: Jeder nicht angenommene Anruf nach 18 Uhr bedeutet potenziell einen verlorenen Neupatienten. Studien zeigen, dass 70% der Patienten bei nicht erreichter Zahnarztpraxis direkt zur Konkurrenz weiterwählen.'
+      title: t('problems.items.0.title'),
+      description: t('problems.items.0.description')
     },
     {
       icon: 'fas fa-users',
-      title: 'Chronische Personalengpässe',
-      description: 'Das Problem: Ihr bestens ausgebildetes Rezeptionsteam ist dauerhaft überlastet mit repetitiven Telefonaten zu Standardfragen, Öffnungszeiten und einfachen Terminanfragen.'
+      title: t('problems.items.1.title'),
+      description: t('problems.items.1.description')
     },
     {
       icon: 'fas fa-clock',
-      title: 'Lange Wartezeiten für Rückrufe',
-      description: 'Das Problem: Neue Patienten müssen oft tagelang auf Rückrufe warten - in Zeiten von Sofort-Service eine fatale Erfahrung. Jeder Tag Wartezeit reduziert Ihre Konversionsrate um bis zu 30%.'
-    },
-    {
-      icon: 'fas fa-calendar-times',
-      title: 'Unbemerkte Terminabsagen',
-      description: 'Das Problem: Absagen auf dem Anrufbeantworter bleiben häufig stundenlang unbemerkt. Wertvolle Behandlungstermine bleiben ungenutzt, während andere Patienten wochenlang warten müssen.'
-    },
-    {
-      icon: 'fas fa-language',
-      title: 'Sprachbarrieren',
-      description: 'Das Problem: In multilingualen Städten gehen wertvolle Patientenpotenziale verloren, weil Anfragen auf Türkisch, Arabisch oder anderen Sprachen nicht professionell bearbeitet werden können.'
-    },
-    {
-      icon: 'fas fa-calendar-alt',
-      title: 'Termin-Chaos',
-      description: 'Das Problem: Manuelle Terminverwaltung führt zu Doppelbuchungen und Terminkollisionen. Die Folge: gestresste Teams, verärgerte Patienten und Imageschaden.'
-    },
-    {
-      icon: 'fas fa-user-times',
-      title: 'Hohe Ausfallquote',
-      description: 'Das Problem: Ohne systematische Erinnerungen liegt die Ausfallquote bei 15-20%. Das sind täglich mehrere ungenutzte Behandlungseinheiten bei gleichzeitig vollen Wartelisten.'
-    },
-    {
-      icon: 'fas fa-chart-pie',
-      title: 'Ineffiziente Zeitverteilung',
-      description: 'Das Problem: Ihr Fachpersonal verbringt 60-70% der Arbeitszeit mit einfachen Telefonaten statt mit wertschöpfender Patientenbetreuung. Sie zahlen Fachpersonal-Gehälter für Telefondienst.'
-    },
-    {
-      icon: 'fas fa-exclamation-circle',
-      title: 'Verlorene Dringlichkeitstermine',
-      description: 'Das Problem: Patienten mit akuten Zahnschmerzen rufen mehrere Zahnarztpraxen an und wählen die erste, die sofort antwortet. Wenn Ihr Telefon besetzt ist, gehen diese wertvollen Notfall- und Akutpatienten unwiderruflich verloren.'
+      title: t('problems.items.2.title'),
+      description: t('problems.items.2.description')
     }
   ]
 
@@ -133,8 +105,8 @@ const Features = () => {
             viewport={{ once: true }}
             className="section-title"
           >
-            <h2>Kennen Sie diese Probleme in Ihrer Zahnarztpraxis?</h2>
-            <p>Diese typischen Herausforderungen kosten Sie täglich Patienten und Umsatz</p>
+            <h2>{t('problems.title')}</h2>
+            <p>{t('problems.subtitle')}</p>
           </motion.div>
 
           <motion.div
