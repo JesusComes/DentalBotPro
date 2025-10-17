@@ -1,214 +1,366 @@
 {
   "nav": {
+    "home": "Home",
+    "solution": "Solution",
     "features": "Features",
-    "benefits": "Benefits",
-    "pricing": "Pricing",
-    "contact": "Contact"
+    "pricing": "Pricing", 
+    "contact": "Contact",
+    "about": "About Us"
   },
   "header": {
     "demo": "Free Demo"
   },
   "hero": {
-    "title": "AI-Powered Dental Assistant",
-    "subtitle": "Revolutionize your dental practice with intelligent automation",
-    "description": "Streamline patient communication, appointment scheduling, and treatment recommendations with our advanced AI technology designed specifically for dental professionals.",
-    "cta": "Start Free Trial",
-    "watch_demo": "Watch Demo"
+    "title": "Never Miss Another Patient Call! Even After Hours",
+    "subtitle": "Your intelligent assistant with comprehensive dental knowledge answers expert questions, explains treatments, books appointments and learns the specifics of your dental practice",
+    "cta": "Test DentalBotPro Live Now"
+  },
+  "stats": {
+    "dental_consulting": "Dental Consulting",
+    "languages": "Languages",
+    "time_savings": "Time Savings",
+    "learning": "Learning"
   },
   "problems": {
-    "title": "Common Challenges in Dental Practices",
-    "subtitle": "Dental practices face numerous operational challenges that impact efficiency and patient satisfaction",
-    "item1": "Manual appointment scheduling leads to conflicts and inefficiencies",
-    "item2": "Repetitive patient communication consumes valuable staff time",
-    "item3": "Treatment planning requires extensive documentation and follow-up",
-    "item4": "Patient education and aftercare instructions are time-consuming"
+    "title": "Do You Know These Problems in Your Dental Practice?",
+    "subtitle": "These typical challenges cost you patients and revenue daily",
+    "missed_calls": {
+      "title": "Missed Calls After Hours",
+      "description": "The Problem: Every unanswered call after 6 PM potentially means a lost new patient. Studies show that 70% of patients call competitors directly when unable to reach a dental practice."
+    },
+    "staff_shortage": {
+      "title": "Chronic Staff Shortages",
+      "description": "The Problem: Your well-trained reception team is permanently overloaded with repetitive phone calls about standard questions, opening hours and simple appointment requests."
+    },
+    "callback_delays": {
+      "title": "Long Waiting Times for Callbacks",
+      "description": "The Problem: New patients often have to wait days for callbacks - a fatal experience in times of instant service. Each day of waiting reduces your conversion rate by up to 30%."
+    },
+    "unnoticed_cancellations": {
+      "title": "Unnoticed Appointment Cancellations",
+      "description": "The Problem: Cancellations on the answering machine often go unnoticed for hours. Valuable treatment appointments remain unused while other patients wait weeks."
+    },
+    "language_barriers": {
+      "title": "Language Barriers",
+      "description": "The Problem: In multilingual cities, valuable patient potential is lost because inquiries in Turkish, Arabic or other languages cannot be handled professionally."
+    },
+    "appointment_chaos": {
+      "title": "Appointment Chaos",
+      "description": "The Problem: Manual appointment management leads to double bookings and scheduling conflicts. The result: stressed teams, angry patients and image damage."
+    },
+    "high_no_show": {
+      "title": "High No-Show Rate",
+      "description": "The Problem: Without systematic reminders, the no-show rate is 15-20%. That's several unused treatment units daily while waiting lists are full."
+    },
+    "inefficient_time": {
+      "title": "Inefficient Time Distribution",
+      "description": "The Problem: Your specialized staff spends 60-70% of working time on simple phone calls instead of value-adding patient care. You pay specialist salaries for phone service."
+    },
+    "lost_emergency": {
+      "title": "Lost Emergency Appointments",
+      "description": "The Problem: Patients with acute tooth pain call multiple dental practices and choose the first one that answers immediately. If your phone is busy, these valuable emergency and acute patients are irretrievably lost."
+    }
   },
   "solution": {
-    "title": "Smart AI Solutions for Modern Dentistry",
-    "subtitle": "Our AI assistant addresses every aspect of dental practice management",
-    "automation": {
-      "title": "Intelligent Automation",
-      "description": "Automate routine tasks and focus on patient care"
-    },
-    "communication": {
-      "title": "Smart Communication",
-      "description": "AI-powered patient interactions and follow-ups"
-    },
-    "insights": {
-      "title": "Data-Driven Insights",
-      "description": "Analytics to optimize your practice performance"
+    "title": "The Solution: Your Intelligent Dental Practice Assistant",
+    "subtitle": "Our AI agent with deep dental expertise immediately handles all patient inquiries - by phone and chat on your website.",
+    "features": {
+      "instant_answers": "Instant responses to all patient inquiries",
+      "auto_booking": "Automatic appointment booking 24/7",
+      "dental_knowledge": "Deep dental expertise and treatment explanations",
+      "team_relief": "Complete relief for your dental practice team",
+      "more_time": "More time for high-quality patient treatment",
+      "multilingual": "Multilingual communication (100+ languages)",
+      "intelligent_triage": "Intelligent triage and emergency routing",
+      "auto_reminders": "Automatic patient reminders",
+      "integration": "Integration with existing dental practice systems",
+      "learning_ai": "Learning AI - adapts to your dental practice",
+      "call_followup": "Follow-up on missed calls",
+      "review_collection": "Automatic dental practice review collection"
     }
   },
   "features": {
-    "title": "Powerful Features for Dental Excellence",
-    "subtitle": "Everything you need to run a modern, efficient dental practice",
-    "scheduling": {
-      "title": "Smart Scheduling",
-      "description": "AI-powered appointment management with conflict detection and optimization"
+    "title": "Everything Your Dental Practice Needs",
+    "subtitle": "Comprehensive AI functions for modern dental practices",
+    "availability": {
+      "title": "24/7 Availability",
+      "description": "Answers calls and chats around the clock, even at night and on weekends. Your patients can always reach you."
     },
-    "communication": {
-      "title": "Patient Communication",
-      "description": "Automated reminders, follow-ups, and educational content delivery"
+    "appointment_management": {
+      "title": "Intelligent Appointment Management",
+      "description": "Books, changes and confirms appointments automatically - integration with your existing calendar and dental practice system."
     },
-    "treatment": {
-      "title": "Treatment Planning",
-      "description": "AI-assisted diagnosis and treatment recommendation system"
+    "multilingual": {
+      "title": "Fully Multilingual",
+      "description": "Communicates perfectly in any language - German, English, Turkish, Arabic, Russian, Polish and over 100 other languages for maximum patient reach."
     },
-    "records": {
-      "title": "Digital Records",
-      "description": "Comprehensive patient history and treatment tracking"
+    "data_capture": {
+      "title": "Patient Data Capture",
+      "description": "Automatically stores name, contact details and appointment requests in your CRM or dental practice system."
     },
-    "billing": {
-      "title": "Automated Billing",
-      "description": "Streamlined insurance claims and payment processing"
+    "auto_reminders": {
+      "title": "Automatic Reminders",
+      "description": "Sends appointment SMS and emails automatically - reduces no-shows by up to 70%."
     },
-    "analytics": {
-      "title": "Practice Analytics",
-      "description": "Real-time insights into practice performance and growth opportunities"
-    }
-  },
-  "benefits": {
-    "title": "Transform Your Practice Today",
-    "subtitle": "Experience the advantages of AI-powered dental practice management",
-    "efficiency": {
-      "title": "Increase Efficiency",
-      "description": "Reduce administrative tasks by up to 70% and focus on patient care",
-      "stat": "70% time saved"
+    "emergency_routing": {
+      "title": "Emergency Routing",
+      "description": "Intelligently recognizes real dental emergencies and immediately forwards to your emergency number or on-call service."
     },
-    "satisfaction": {
-      "title": "Improve Patient Satisfaction",
-      "description": "Enhanced communication and personalized care experiences",
-      "stat": "95% satisfaction rate"
+    "dental_expertise": {
+      "title": "Dental Medical Expertise",
+      "description": "Answers complex questions about dental treatments, aftercare and prevention - based on the latest dental databases and guidelines."
     },
-    "revenue": {
-      "title": "Boost Revenue",
-      "description": "Optimize scheduling and reduce no-shows to maximize practice income",
-      "stat": "30% revenue increase"
-    }
-  },
-  "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "Get started with our AI assistant in three simple steps",
-    "step1": {
-      "title": "Quick Setup",
-      "description": "Connect your existing systems and configure AI preferences"
+    "deep_learning": {
+      "title": "Deep Learning",
+      "description": "Continuously learns the specific processes, treatment methods and scheduling logic of your dental practice - becomes more precise every day."
     },
-    "step2": {
-      "title": "AI Training",
-      "description": "Our AI learns your practice patterns and patient preferences"
-    },
-    "step3": {
-      "title": "Go Live",
-      "description": "Start benefiting from automated workflows and intelligent assistance"
-    }
-  },
-  "pricing": {
-    "title": "Choose Your Plan",
-    "subtitle": "Flexible pricing options to fit practices of all sizes",
-    "monthly": "Monthly",
-    "annually": "Annually",
-    "starter": {
-      "name": "Starter",
-      "price": "$99",
-      "period": "/month",
-      "description": "Perfect for small practices",
-      "features": [
-        "Up to 500 patients",
-        "Basic scheduling automation",
-        "Email notifications",
-        "Standard support",
-        "1 user account"
-      ],
-      "cta": "Start Free Trial"
-    },
-    "professional": {
-      "name": "Professional",
-      "price": "$299",
-      "period": "/month",
-      "description": "Ideal for growing practices",
-      "popular": "Most Popular",
-      "features": [
-        "Up to 2,000 patients",
-        "Advanced AI scheduling",
-        "SMS + Email automation",
-        "Treatment planning AI",
-        "Priority support",
-        "5 user accounts",
-        "Analytics dashboard"
-      ],
-      "cta": "Start Free Trial"
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "price": "$699",
-      "period": "/month",
-      "description": "For large practices and clinics",
-      "features": [
-        "Unlimited patients",
-        "Full AI automation suite",
-        "Multi-channel communication",
-        "Custom AI training",
-        "Dedicated support",
-        "Unlimited users",
-        "Advanced analytics",
-        "API access"
-      ],
-      "cta": "Contact Sales"
+    "dental_consulting": {
+      "title": "Dental Medical Consultation",
+      "description": "Explains dental treatment procedures, answers cost questions and optimally prepares patients for their dental appointment - humanly and empathetically."
     }
   },
   "integration": {
-    "title": "Seamless Integrations",
-    "subtitle": "Connect with your existing dental software and tools",
-    "description": "Our AI assistant integrates with popular dental practice management systems, ensuring a smooth transition without disrupting your current workflows."
+    "title": "Works with ANY Dental Practice Software - Guaranteed",
+    "subtitle": "No system change. No complicated interfaces. Ready to use immediately.",
+    "step1": {
+      "title": "AI Agent Captures Perfectly",
+      "description": "Your intelligent assistant collects all important information: name, contact details, appointment request, preferred dentist and treatment reason - structured and complete."
+    },
+    "step2": {
+      "title": "Central Overview for Your Team",
+      "description": "All appointment requests appear clearly in your dashboard, are delivered by email or land directly in your CRM (Google Calendar, HubSpot, Excel)."
+    },
+    "step3": {
+      "title": "You Keep Control",
+      "description": "Your team reviews the requests and confirms appointments with one click in your familiar dental practice software."
+    },
+    "standard_integration": "Standard Integration (Immediately available)",
+    "compatible_systems": "Compatible with all common dental practice systems:",
+    "premium_option": "Premium Option: Direct Integration",
+    "premium_description": "For modern cloud systems (CGM LIFE, DocCirrus) we offer fully automatic synchronization on request - appointments appear directly in your dental practice software without manual transfer.",
+    "advantage_title": "⚡ The Advantage of Our Approach",
+    "advantage_description": "While other solutions fail on outdated interfaces, DentalBotPro works universally - regardless of how old or modern your dental practice software is. You receive structured, high-quality patient data without technical risk or IT projects.",
+    "time_savings": "Typical time savings: Confirming an appointment request in your software takes 10 seconds - the phone call would have taken 5 minutes. You save 90% of the time with full control."
   },
-  "testimonials": {
-    "title": "What Dental Professionals Say",
-    "subtitle": "Join thousands of satisfied dental professionals",
-    "testimonial1": {
-      "text": "This AI assistant has transformed our practice. We've reduced admin time by 60% and our patients love the automated communication.",
-      "author": "Dr. Sarah Johnson",
-      "position": "DDS, Family Dentistry"
+  "how_it_works": {
+    "title": "How It Works So Simply",
+    "subtitle": "Your personal AI assistant in just 3 steps",
+    "step1": {
+      "title": "Setup in 72 Hours",
+      "description": "We configure your personal AI assistant specifically for your dental practice and your workflows."
     },
-    "testimonial2": {
-      "text": "The scheduling automation alone has saved us hours every week. The AI learns our preferences and makes incredibly accurate suggestions.",
-      "author": "Mark Thompson",
-      "position": "Practice Manager"
+    "step2": {
+      "title": "Integration with Your Dental Practice",
+      "description": "Connection to phone, website and optionally to your existing dental practice software for seamless workflows."
     },
-    "testimonial3": {
-      "text": "Patient satisfaction has never been higher. The personalized follow-ups and education materials have really made a difference.",
-      "author": "Dr. Michael Chen",
-      "position": "Orthodontist"
+    "step3": {
+      "title": "Immediately Ready for Use",
+      "description": "Your AI assistant starts and relieves your team from day 1 - measurable results from the first hour."
     }
+  },
+  "pricing": {
+    "title": "Transparent Prices - No Hidden Costs",
+    "subtitle": "AI agents with different dental expertise levels for every dental practice size",
+    "pro": {
+      "name": "Pro",
+      "price": "€149",
+      "period": "monthly",
+      "setup_price": "Setup price: €299",
+      "setup_time": "Setup time: 72 hours",
+      "features": [
+        "Website Chatbot",
+        "24/7 Appointment Booking",
+        "Basic dental questions",
+        "Multilingual Support",
+        "Email Integration",
+        "Automatic Reminders"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "€299",
+      "period": "monthly",
+      "setup_price": "Setup price: €499",
+      "setup_time": "Setup time: 1 week",
+      "popular": "POPULAR",
+      "features": [
+        "Everything from Pro Plan",
+        "Voice-Enabled: AI can speak",
+        "Advanced dental consultation",
+        "Symptom initial assessment",
+        "Intelligent emergency routing",
+        "CRM Integration"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€499",
+      "period": "monthly",
+      "setup_price": "Setup price: €999",
+      "setup_time": "Setup time: 2-4 weeks",
+      "features": [
+        "Everything from Premium Plan",
+        "Phone Agent: Handle real calls",
+        "Audio Input: Patients can speak",
+        "Real-time phone conversations",
+        "Dental practice-specific deep learning",
+        "Comprehensive patient consultation",
+        "Fully automatic workflows",
+        "Personal Success Manager"
+      ]
+    },
+    "note": "All prices plus VAT | 30 days notice period | Free trial available",
+    "buy_now": "Buy Now"
+  },
+  "benefits": {
+    "title": "Why Dental Practices Choose DentalBotPro",
+    "subtitle": "The AI agent with deep dental expertise - far more than just appointment scheduling",
+    "more_patients": {
+      "title": "More Patients",
+      "description": "Never again lost inquiries due to unavailability - every call is answered professionally with dental expertise"
+    },
+    "dental_expertise": {
+      "title": "Dental Medical Expertise",
+      "description": "Explains dental treatments, answers professional questions and advises patients competently - based on first-class dental data"
+    },
+    "higher_efficiency": {
+      "title": "Higher Efficiency",
+      "description": "80% less time spent on patient communication - the AI agent also handles consultation conversations"
+    },
+    "available_247": {
+      "title": "Available 24/7",
+      "description": "Available around the clock - professional advice on dental treatments and appointment booking even at night"
+    },
+    "deep_learning": {
+      "title": "Deep Learning",
+      "description": "Continuously learns the specific processes and peculiarities of your dental practice - becomes increasingly precise"
+    },
+    "human_empathic": {
+      "title": "Human & Empathetic",
+      "description": "Responds naturally and understandingly - patients often don't notice they're speaking with an AI agent"
+    },
+    "cost_savings": {
+      "title": "Cost Savings",
+      "description": "Replaces multiple employees: reception + consultation + appointment coordination - all in one system"
+    },
+    "dental_competence": {
+      "title": "Dental Medical Competence",
+      "description": "Answers questions about dental treatments, aftercare and prevention - with access to the latest dental databases."
+    }
+  },
+  "demo": {
+    "title": "Test DentalBotPro Live Now",
+    "subtitle": "Chat with our AI assistant with real dental expertise - ask questions about treatments, appointments or dental practice procedures",
+    "placeholder_text": "AI Agent Integration Ready",
+    "placeholder_subtext": "Your DentalBotPro AI Agent will be embedded here.",
+    "placeholder_dev": "For developers: Replace this div container with your AI Agent embed script.",
+    "cta": "To Pricing Models"
   },
   "contact": {
-    "title": "Get Started Today",
-    "subtitle": "Ready to transform your dental practice? Contact us for a personalized demo.",
-    "form": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "practice": "Practice Name",
-      "message": "Message",
-      "submit": "Send Message"
-    }
+    "title": "Start Today",
+    "subtitle": "Schedule your free 30-minute demo and see DentalBotPro live in action. Learn how you can revolutionize your dental practice.",
+    "form_title": "Schedule Demo Appointment",
+    "form_subtitle": "Fill out the form and we'll contact you within 24 hours",
+    "name": "Name",
+    "name_placeholder": "Your full name",
+    "email": "Email",
+    "email_placeholder": "Your email address",
+    "phone": "Phone",
+    "phone_placeholder": "Your phone number",
+    "practice": "Dental Practice Name",
+    "practice_placeholder": "Name of your dental practice",
+    "message": "Your Message (optional)",
+    "message_placeholder": "Special requirements or questions...",
+    "submit": "Book Demo Now",
+    "privacy_note": "Your data is treated confidentially and processed according to German data protection standards.",
+    "success_title": "Thank you for your inquiry!",
+    "success_message": "We have received your demo request and will contact you within 24 hours.",
+    "success_email": "You will receive a confirmation email shortly with further details.",
+    "required": "Please fill in all required fields."
   },
   "footer": {
-    "company": "DentalBot Pro",
-    "description": "AI-powered solutions for modern dental practices",
-    "quickLinks": "Quick Links",
-    "product": "Product",
-    "support": "Support",
-    "legal": "Legal",
-    "links": {
-      "features": "Features",
-      "pricing": "Pricing",
-      "demo": "Demo",
-      "help": "Help Center",
-      "documentation": "Documentation",
-      "contact": "Contact",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+    "title": "DentalBotPro",
+    "description": "Your AI assistant for modern dental practices. 24/7 patient care at the highest level.",
+    "email": "Email: info@dentalbotpro.de",
+    "phone": "Phone: +49 (0) 30 120 844 30",
+    "links": "Links",
+    "privacy": "Privacy Policy",
+    "imprint": "Imprint",
+    "terms": "Terms & Conditions",
+    "features_title": "Features",
+    "feature_1": "24/7 AI Assistant",
+    "feature_2": "Multilingual Support",
+    "feature_3": "Automatic Appointment Booking",
+    "feature_4": "German Servers",
+    "copyright": "© 2024 DentalBotPro. All rights reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "intro_title": "Your Partner for Professional AI Agent Development",
+    "intro_description": "Our company DentalBotPro is a leading specialist in professional creation, programming and extension of AI agents of all kinds. We develop intelligent automation solutions that revolutionize companies and drastically increase their efficiency.",
+    "expertise_title": "Our Expertise",
+    "expertise_subtitle": "Tailored solutions for every use case",
+    "expertise_ai_development": {
+      "title": "AI Agent Development",
+      "description": "Tailored solutions for every use case"
     },
-    "copyright": "© 2025 DentalBot Pro. All rights reserved."
+    "expertise_voice_chat": {
+      "title": "Voice & Chat AI",
+      "description": "Natural communication capabilities in over 100 languages"
+    },
+    "expertise_integration": {
+      "title": "System Integration",
+      "description": "Seamless connection to existing software and workflows"
+    },
+    "expertise_deep_learning": {
+      "title": "Deep Learning",
+      "description": "Continuously learning AI systems with industry-specific expertise"
+    },
+    "expertise_support": {
+      "title": "24/7 Support",
+      "description": "Reliable operation and continuous optimization"
+    },
+    "industries_title": "Who We Work For",
+    "industries_subtitle": "Our AI agents support companies of all sizes",
+    "industry_dental": "Dental Practices & Clinics",
+    "industry_ecommerce": "E-Commerce & Retail",
+    "industry_real_estate": "Real Estate & Brokers",
+    "industry_consulting": "Consulting & Services",
+    "why_us_title": "Why DentalBotPro?",
+    "why_us_subtitle": "The advantages of our solutions",
+    "why_german": {
+      "title": "German Development",
+      "description": "Highest quality standards and GDPR compliance"
+    },
+    "why_expertise": {
+      "title": "Industry Expertise",
+      "description": "Deep understanding of specific business processes"
+    },
+    "why_scalable": {
+      "title": "Scalable Solutions",
+      "description": "From small automations to enterprise systems"
+    },
+    "why_support": {
+      "title": "Personal Support",
+      "description": "Dedicated Success Manager for every customer"
+    },
+    "highlights_title": "Our Highlights",
+    "highlights_subtitle": "What makes us special",
+    "highlight_fast": {
+      "title": "Fast Implementation",
+      "description": "Your AI assistant ready in just 72 hours"
+    },
+    "highlight_gdpr": {
+      "title": "GDPR Compliant",
+      "description": "Data protection according to German and European standards"
+    },
+    "highlight_custom": {
+      "title": "Customized",
+      "description": "Individual adaptation to your dental practice processes"
+    },
+    "cta_title": "Ready for Your AI Agent?",
+    "cta_description": "Let us develop the perfect AI solution for your company together.",
+    "cta_consultation": "Request Consultation Now",
+    "cta_demo": "Test Live Demo!"
   }
 }

@@ -1,81 +1,77 @@
 'use client'
 
-import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext'
 
-const Benefits = () => {
-  const { t } = useLanguage();
+export default function Benefits() {
+  const { t } = useLanguage()
 
   const benefits = [
     {
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-        </svg>
-      ),
-      title: t('benefits.efficiency.title', 'Increase Efficiency'),
-      description: t('benefits.efficiency.description', 'Reduce administrative tasks by up to 70% and focus on patient care'),
-      stat: t('benefits.efficiency.stat', '70% time saved'),
-      color: 'from-blue-500 to-blue-600'
+      icon: 'fas fa-user-plus',
+      title: t('benefits.more_patients.title'),
+      description: t('benefits.more_patients.description')
     },
     {
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-        </svg>
-      ),
-      title: t('benefits.satisfaction.title', 'Improve Patient Satisfaction'),
-      description: t('benefits.satisfaction.description', 'Enhanced communication and personalized care experiences'),
-      stat: t('benefits.satisfaction.stat', '95% satisfaction rate'),
-      color: 'from-green-500 to-green-600'
+      icon: 'fas fa-graduation-cap',
+      title: t('benefits.dental_expertise.title'),
+      description: t('benefits.dental_expertise.description')
     },
     {
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
-        </svg>
-      ),
-      title: t('benefits.revenue.title', 'Boost Revenue'),
-      description: t('benefits.revenue.description', 'Optimize scheduling and reduce no-shows to maximize practice income'),
-      stat: t('benefits.revenue.stat', '30% revenue increase'),
-      color: 'from-purple-500 to-purple-600'
+      icon: 'fas fa-chart-line',
+      title: t('benefits.higher_efficiency.title'),
+      description: t('benefits.higher_efficiency.description')
+    },
+    {
+      icon: 'fas fa-clock',
+      title: t('benefits.available_247.title'),
+      description: t('benefits.available_247.description')
+    },
+    {
+      icon: 'fas fa-brain',
+      title: t('benefits.deep_learning.title'),
+      description: t('benefits.deep_learning.description')
+    },
+    {
+      icon: 'fas fa-comments',
+      title: t('benefits.human_empathic.title'),
+      description: t('benefits.human_empathic.description')
+    },
+    {
+      icon: 'fas fa-euro-sign',
+      title: t('benefits.cost_savings.title'),
+      description: t('benefits.cost_savings.description')
+    },
+    {
+      icon: 'fas fa-stethoscope',
+      title: t('benefits.dental_competence.title'),
+      description: t('benefits.dental_competence.description')
     }
-  ];
+  ]
 
   return (
-    <section id="benefits" className="section-padding bg-white">
-      <div className="container mx-auto">
+    <section className="py-24 bg-slate-900/50">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            {t('benefits.title', 'Transform Your Practice Today')}
+          <h2 className="text-4xl font-black mb-6 gradient-text-brutal">
+            {t('benefits.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('benefits.subtitle', 'Experience the advantages of AI-powered dental practice management')}
+          <p className="text-xl text-gray-300">
+            {t('benefits.subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border border-gray-100">
-              <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center text-white mx-auto mb-6`}>
-                {benefit.icon}
+            <div key={index} className="card-brutal group hover:scale-105 transition-all duration-500 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-brutal flex items-center justify-center">
+                <i className={`${benefit.icon} text-2xl text-white`}></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {benefit.description}
-              </p>
-              <div className={`inline-block px-4 py-2 bg-gradient-to-r ${benefit.color} text-white rounded-full font-semibold text-lg`}>
-                {benefit.stat}
-              </div>
+              <h3 className="text-lg font-bold text-white mb-4">{benefit.title}</h3>
+              <p className="text-gray-300 text-sm">{benefit.description}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
-
-export default Benefits;
+  )
+}

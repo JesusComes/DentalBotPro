@@ -1,82 +1,94 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
-const LanguageContext = createContext();
+const LanguageContext = createContext()
 
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};
+const translations = {
+  de: () => import('../translations/de.json').then(module => module.default),
+  en: () => import('../translations/en.json').then(module => module.default),
+  fr: () => import('../translations/fr.json').then(module => module.default),
+  ru: () => import('../translations/ru.json').then(module => module.default),
+}
 
-export const LanguageProvider = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState('en');
-  const [translations, setTranslations] = useState({});
-
-  const languages = {
-    en: 'English',
-    de: 'Deutsch',
-    fr: 'Français',
-    ru: 'Русский'
-  };
+export function LanguageProvider({ children }) {
+  const [currentLanguage, setCurrentLanguage] = useState('de')
+  const [translations, setTranslations] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const loadTranslations = async () => {
-      try {
-        const response = await import(`../translations/${currentLanguage}.json`);
-        setTranslations(response.default);
-      } catch (error) {
-        console.warn(`Failed to load translations for ${currentLanguage}, falling back to English`);
-        const fallback = await import('../translations/en.json');
-        setTranslations(fallback.default);
-      }
-    };
+    loadTranslations(currentLanguage)
+  }, [currentLanguage])
 
-    loadTranslations();
-  }, [currentLanguage]);
+  const loadTranslations = async (lang) => {
+    setIsLoading(true)
+    try {
+      let translationData
+      switch (lang) {
+        case 'en':
+          translationData = (await import('../translations/en.json')).default
+          break
+        case 'fr':
+          translationData = (await import('../translations/fr.json')).default
+          break
+        case 'ru':
+          translationData = (await import('../translations/ru.json')).default
+          break
+        default:
+          translationData = (await import('../translations/de.json')).default
+      }
+      setTranslations(translationData)
+    } catch (error) {
+      console.error('Error loading translations:', error)
+      // Fallback to German if translation fails
+      if (lang !== 'de') {
+        const fallbackData = (await import('../translations/de.json')).default
+        setTranslations(fallbackData)
+      }
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   const changeLanguage = (lang) => {
-    if (languages[lang]) {
-      setCurrentLanguage(lang);
-      localStorage?.setItem('language', lang);
-    }
-  };
+    setCurrentLanguage(lang)
+  }
 
-  useEffect(() => {
-    const savedLanguage = localStorage?.getItem('language');
-    if (savedLanguage && languages[savedLanguage]) {
-      setCurrentLanguage(savedLanguage);
-    }
-  }, []);
-
-  const t = (key, fallback = '') => {
-    const keys = key.split('.');
-    let value = translations;
+  const t = (key) => {
+    if (isLoading) return key
+    
+    const keys = key.split('.')
+    let value = translations
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = value[k]
       } else {
-        return fallback || key;
+        return key // Return key if translation not found
       }
     }
     
-    return typeof value === 'string' ? value : fallback || key;
-  };
+    return typeof value === 'string' ? value : key
+  }
 
   const value = {
     currentLanguage,
     changeLanguage,
     t,
-    languages
-  };
+    isLoading
+  }
 
   return (
     <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
-  );
-};
+  )
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext)
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider')
+  }
+  return context
+}
