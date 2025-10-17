@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "benefits": "Avantages",
+    "pricing": "Tarifs",
+    "contact": "Contact"
+  },
+  "header": {
+    "demo": "Démo Gratuite"
+  },
+  "hero": {
+    "title": "Assistant Dentaire Alimenté par IA",
+    "subtitle": "Révolutionnez votre cabinet dentaire avec l'automatisation intelligente",
+    "description": "Optimisez la communication avec les patients, la planification des rendez-vous et les recommandations de traitement avec notre technologie IA avancée conçue spécifiquement pour les professionnels dentaires.",
+    "cta": "Essai Gratuit",
+    "watch_demo": "Voir la Démo"
+  },
+  "problems": {
+    "title": "Défis Communs dans les Cabinets Dentaires",
+    "subtitle": "Les cabinets dentaires font face à de nombreux défis opérationnels qui impactent l'efficacité et la satisfaction des patients",
+    "item1": "La planification manuelle des rendez-vous mène à des conflits et inefficacités",
+    "item2": "La communication répétitive avec les patients consomme un temps précieux du personnel",
+    "item3": "La planification des traitements nécessite une documentation extensive et un suivi",
+    "item4": "L'éducation des patients et les instructions de soins post-traitement prennent du temps"
+  },
+  "solution": {
+    "title": "Solutions IA Intelligentes pour la Dentisterie Moderne",
+    "subtitle": "Notre assistant IA adresse tous les aspects de la gestion de cabinet dentaire",
+    "automation": {
+      "title": "Automatisation Intelligente",
+      "description": "Automatisez les tâches routinières et concentrez-vous sur les soins aux patients"
+    },
+    "communication": {
+      "title": "Communication Intelligente",
+      "description": "Interactions et suivis patients alimentés par IA"
+    },
+    "insights": {
+      "title": "Insights Basés sur les Données",
+      "description": "Analyses pour optimiser les performances de votre cabinet"
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités Puissantes pour l'Excellence Dentaire",
+    "subtitle": "Tout ce dont vous avez besoin pour gérer un cabinet dentaire moderne et efficace",
+    "scheduling": {
+      "title": "Planification Intelligente",
+      "description": "Gestion des rendez-vous alimentée par IA avec détection des conflits et optimisation"
+    },
+    "communication": {
+      "title": "Communication Patient",
+      "description": "Rappels automatisés, suivis et livraison de contenu éducatif"
+    },
+    "treatment": {
+      "title": "Planification de Traitement",
+      "description": "Système de diagnostic et recommandations de traitement assisté par IA"
+    },
+    "records": {
+      "title": "Dossiers Numériques",
+      "description": "Historique patient complet et suivi des traitements"
+    },
+    "billing": {
+      "title": "Facturation Automatisée",
+      "description": "Réclamations d'assurance rationalisées et traitement des paiements"
+    },
+    "analytics": {
+      "title": "Analyses de Cabinet",
+      "description": "Insights en temps réel sur les performances du cabinet et opportunités de croissance"
+    }
+  },
+  "benefits": {
+    "title": "Transformez Votre Cabinet Aujourd'hui",
+    "subtitle": "Découvrez les avantages de la gestion de cabinet dentaire alimentée par IA",
+    "efficiency": {
+      "title": "Augmenter l'Efficacité",
+      "description": "Réduisez les tâches administratives jusqu'à 70% et concentrez-vous sur les soins aux patients",
+      "stat": "70% de temps économisé"
+    },
+    "satisfaction": {
+      "title": "Améliorer la Satisfaction Patient",
+      "description": "Communication améliorée et expériences de soins personnalisées",
+      "stat": "95% de taux de satisfaction"
+    },
+    "revenue": {
+      "title": "Augmenter les Revenus",
+      "description": "Optimisez la planification et réduisez les absences pour maximiser les revenus du cabinet",
+      "stat": "30% d'augmentation des revenus"
+    }
+  },
+  "howItWorks": {
+    "title": "Comment Ça Marche",
+    "subtitle": "Commencez avec notre assistant IA en trois étapes simples",
+    "step1": {
+      "title": "Configuration Rapide",
+      "description": "Connectez vos systèmes existants et configurez les préférences IA"
+    },
+    "step2": {
+      "title": "Formation IA",
+      "description": "Notre IA apprend vos modèles de cabinet et préférences patients"
+    },
+    "step3": {
+      "title": "Mise en Service",
+      "description": "Commencez à bénéficier des workflows automatisés et assistance intelligente"
+    }
+  },
+  "pricing": {
+    "title": "Choisissez Votre Plan",
+    "subtitle": "Options de tarification flexibles pour cabinets de toutes tailles",
+    "monthly": "Mensuel",
+    "annually": "Annuel",
+    "starter": {
+      "name": "Starter",
+      "price": "99€",
+      "period": "/mois",
+      "description": "Parfait pour petits cabinets",
+      "features": [
+        "Jusqu'à 500 patients",
+        "Automatisation de base de la planification",
+        "Notifications par e-mail",
+        "Support standard",
+        "1 compte utilisateur"
+      ],
+      "cta": "Commencer l'Essai Gratuit"
+    },
+    "professional": {
+      "name": "Professionnel",
+      "price": "299€",
+      "period": "/mois",
+      "description": "Idéal pour cabinets en croissance",
+      "popular": "Le Plus Populaire",
+      "features": [
+        "Jusqu'à 2 000 patients",
+        "Planification IA avancée",
+        "Automatisation SMS + E-mail",
+        "IA de planification de traitement",
+        "Support prioritaire",
+        "5 comptes utilisateur",
+        "Tableau de bord analytics"
+      ],
+      "cta": "Commencer l'Essai Gratuit"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "price": "699€",
+      "period": "/mois",
+      "description": "Pour grands cabinets et cliniques",
+      "features": [
+        "Patients illimités",
+        "Suite complète d'automatisation IA",
+        "Communication multi-canal",
+        "Formation IA personnalisée",
+        "Support dédié",
+        "Utilisateurs illimités",
+        "Analytics avancées",
+        "Accès API"
+      ],
+      "cta": "Contacter les Ventes"
+    }
+  },
+  "integration": {
+    "title": "Intégrations Transparentes",
+    "subtitle": "Connectez-vous avec vos logiciels et outils dentaires existants",
+    "description": "Notre assistant IA s'intègre avec les systèmes populaires de gestion de cabinet dentaire, assurant une transition fluide sans perturber vos workflows actuels."
+  },
+  "testimonials": {
+    "title": "Ce Que Disent les Professionnels Dentaires",
+    "subtitle": "Rejoignez des milliers de professionnels dentaires satisfaits",
+    "testimonial1": {
+      "text": "Cet assistant IA a transformé notre cabinet. Nous avons réduit le temps administratif de 60% et nos patients adorent la communication automatisée.",
+      "author": "Dr. Sarah Dubois",
+      "position": "Chirurgien-dentiste, Dentisterie Familiale"
+    },
+    "testimonial2": {
+      "text": "L'automatisation de la planification seule nous a fait économiser des heures chaque semaine. L'IA apprend nos préférences et fait des suggestions incroyablement précises.",
+      "author": "Marc Martin",
+      "position": "Gestionnaire de Cabinet"
+    },
+    "testimonial3": {
+      "text": "La satisfaction des patients n'a jamais été aussi élevée. Les suivis personnalisés et matériaux éducatifs ont vraiment fait la différence.",
+      "author": "Dr. Michel Bernard",
+      "position": "Orthodontiste"
+    }
+  },
+  "contact": {
+    "title": "Commencez Aujourd'hui",
+    "subtitle": "Prêt à transformer votre cabinet dentaire ? Contactez-nous pour une démo personnalisée.",
+    "form": {
+      "name": "Nom Complet",
+      "email": "Adresse E-mail",
+      "phone": "Numéro de Téléphone",
+      "practice": "Nom du Cabinet",
+      "message": "Message",
+      "submit": "Envoyer le Message"
+    }
+  },
+  "footer": {
+    "company": "DentalBot Pro",
+    "description": "Solutions alimentées par IA pour cabinets dentaires modernes",
+    "quickLinks": "Liens Rapides",
+    "product": "Produit",
+    "support": "Support",
+    "legal": "Légal",
+    "links": {
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "demo": "Démo",
+      "help": "Centre d'Aide",
+      "documentation": "Documentation",
+      "contact": "Contact",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation"
+    },
+    "copyright": "© 2025 DentalBot Pro. Tous droits réservés."
+  }
+}
