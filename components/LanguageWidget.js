@@ -1,20 +1,25 @@
-'use client'
-
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 
-const languages = [
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' }
-]
-
-export default function LanguageWidget() {
-  const { currentLanguage, changeLanguage } = useLanguage()
+const LanguageWidget = () => {
+  const { currentLanguage, changeLanguage, languages } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
 
-  const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0]
+  const currentLang = languages.find(lang => lang.code === currentLanguage)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const handleLanguageChange = (langCode) => {
     changeLanguage(langCode)
@@ -22,42 +27,94 @@ export default function LanguageWidget() {
   }
 
   return (
-    <div className="relative">
-      <button
+    <div className="relative" ref={dropdownRef}>
+      {/* Language Trigger Button */}
+      <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 rounded-lg glass-brutal hover:scale-105 transition-all duration-300 text-dental-blue-800 border border-dental-blue-200/50 shadow-lg"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`
+          flex items-center space-x-2 px-3 py-2 rounded-xl 
+          bg-white/10 backdrop-blur-md border border-white/20
+          hover:bg-white/20 hover:border-white/30
+          transition-all duration-300 ease-out
+          text-sm font-medium text-primary-blue-800
+          shadow-lg hover:shadow-xl
+          ${isOpen ? 'bg-white/20 border-white/30' : ''}
+        `}
       >
-        <span className="text-lg">{currentLang.flag}</span>
-        <span className="hidden sm:block font-medium">{currentLang.name}</span>
-        <i className={`fas fa-chevron-down transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
-      </button>
-
-      {isOpen && (
-        <div className="absolute top-full right-0 mt-2 py-2 w-48 glass-brutal rounded-xl shadow-2xl z-50 border border-dental-blue-200/50">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full px-4 py-3 text-left hover:bg-dental-blue-100/30 transition-colors duration-200 flex items-center space-x-3 ${
-                currentLanguage === lang.code ? 'bg-dental-blue-100/40 border-l-4 border-dental-green-500' : ''
-              }`}
-            >
-              <span className="text-lg">{lang.flag}</span>
-              <span className="font-medium text-dental-blue-800">{lang.name}</span>
-              {currentLanguage === lang.code && (
-                <i className="fas fa-check text-dental-green-500 ml-auto"></i>
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {isOpen && (
-        <div 
-          className="fixed inset-0 z-40"
-          onClick={() => setIsOpen(false)}
+        <span className="text-lg">{currentLang?.flag}</span>
+        <span className="hidden sm:inline-block font-semibold">
+          {currentLang?.code.toUpperCase()}
+        </span>
+        <motion.i 
+          className={`fas fa-chevron-down text-xs transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
         />
-      )}
+      </motion.button>
+
+      {/* Language Dropdown */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="
+              absolute top-full right-0 mt-2 w-48
+              bg-white/95 backdrop-blur-xl rounded-2xl 
+              border border-primary-blue-200 shadow-2xl
+              overflow-hidden z-50
+            "
+          >
+            <div className="py-2">
+              {languages.map((language, index) => (
+                <motion.button
+                  key={language.code}
+                  onClick={() => handleLanguageChange(language.code)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.2 }}
+                  whileHover={{ 
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    x: 4
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`
+                    w-full flex items-center space-x-3 px-4 py-3
+                    text-left text-sm font-medium text-primary-blue-800
+                    hover:bg-primary-blue/10 transition-all duration-200
+                    ${currentLanguage === language.code ? 'bg-primary-blue/5 border-r-2 border-primary-blue' : ''}
+                  `}
+                >
+                  <span className="text-lg">{language.flag}</span>
+                  <div className="flex-1">
+                    <div className="font-semibold">{language.name}</div>
+                    <div className="text-xs text-primary-blue-600 uppercase tracking-wide">
+                      {language.code}
+                    </div>
+                  </div>
+                  {currentLanguage === language.code && (
+                    <motion.i 
+                      className="fas fa-check text-primary-blue text-sm"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.1 }}
+                    />
+                  )}
+                </motion.button>
+              ))}
+            </div>
+            
+            {/* Elegant bottom accent */}
+            <div className="h-1 bg-gradient-blue-green" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
+
+export default LanguageWidget

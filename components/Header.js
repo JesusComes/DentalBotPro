@@ -1,10 +1,9 @@
-'use client'
-
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 import LanguageWidget from './LanguageWidget'
 
-export default function Header() {
+const Header = ({ onOpenAbout }) => {
   const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -13,6 +12,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -20,189 +20,148 @@ export default function Header() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
-    }
-  }
-
-  const openAboutModal = () => {
-    const modal = document.getElementById('about-modal')
-    if (modal) {
-      modal.classList.remove('hidden')
-      modal.classList.add('flex')
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
     setIsMobileMenuOpen(false)
   }
 
-  const scrollToDemo = () => {
-    scrollToSection('kontakt')
-  }
+  const navItems = [
+    { id: 'home', label: t('nav.home') },
+    { id: 'loesung', label: t('nav.solution') },
+    { id: 'funktionen', label: t('nav.features') },
+    { id: 'preise', label: t('nav.pricing') },
+    { id: 'kontakt', label: t('nav.contact') },
+  ]
 
   return (
-    <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass-brutal shadow-2xl py-4' 
-          : 'bg-white/95 backdrop-blur-xl py-6 border-b border-dental-blue-200/30'
-      }`}>
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div 
-              onClick={() => scrollToSection('home')}
-              className="flex items-center space-x-3 cursor-pointer group"
+          ? 'bg-white/95 backdrop-blur-lg shadow-soft border-b border-primary-blue-200' 
+          : 'bg-white/90 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className={`flex justify-between items-center transition-all duration-300 ${
+          isScrolled ? 'py-4' : 'py-6'
+        }`}>
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center cursor-pointer"
+            onClick={() => scrollToSection('home')}
+          >
+            <div className="w-10 h-10 bg-gradient-blue rounded-lg flex items-center justify-center mr-3 text-white text-xl">
+              <i className="fas fa-robot"></i>
+            </div>
+            <span className="text-2xl font-bold gradient-text">DentalBotPro</span>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.id}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => scrollToSection(item.id)}
+                className="relative text-neutral-dark font-medium hover:text-primary-blue transition-colors duration-300 group"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-blue transition-all duration-300 group-hover:w-full"></span>
+              </motion.button>
+            ))}
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navItems.length * 0.1 }}
+              onClick={onOpenAbout}
+              className="relative text-neutral-dark font-medium hover:text-primary-blue transition-colors duration-300 group"
             >
-              <div className="w-12 h-12 bg-gradient-brutal rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-glow">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <span className="text-2xl font-bold gradient-text-brutal">
-                DentalBotPro
-              </span>
-            </div>
+              {t('nav.about')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-blue transition-all duration-300 group-hover:w-full"></span>
+            </motion.button>
+          </nav>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="nav-link"
-              >
-                {t('nav.home')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('loesung')}
-                className="nav-link"
-              >
-                {t('nav.solution')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('funktionen')}
-                className="nav-link"
-              >
-                {t('nav.features')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('preise')}
-                className="nav-link"
-              >
-                {t('nav.pricing')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('kontakt')}
-                className="nav-link"
-              >
-                {t('nav.contact')}
-              </button>
-              <button 
-                onClick={openAboutModal}
-                className="nav-link"
-              >
-                {t('nav.about')}
-              </button>
-            </nav>
+          {/* Right Side - CTA Button and Language Widget */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* CTA Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('kontakt')}
+              className="btn-primary shadow-lg hover:shadow-xl"
+            >
+              Kostenlose Demo
+            </motion.button>
 
-            {/* Right side - Demo Button + Language Widget */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button 
-                onClick={scrollToDemo}
-                className="btn-brutal text-sm px-6 py-3"
-              >
-                {t('header.demo')}
-              </button>
-              <LanguageWidget />
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center space-x-4">
-              <LanguageWidget />
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-dental-blue-700 hover:text-dental-green-600 transition-colors duration-200 p-2 border border-dental-blue-200 rounded-lg glass-brutal"
-              >
-                <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-              </button>
-            </div>
+            {/* Language Widget */}
+            <LanguageWidget />
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-2xl text-neutral-dark"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
           {isMobileMenuOpen && (
-            <div className="lg:hidden mt-6 pb-6 border-t border-dental-blue-200/20">
-              <nav className="flex flex-col space-y-4 mt-6">
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="mobile-nav-link"
-                >
-                  {t('nav.home')}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('loesung')}
-                  className="mobile-nav-link"
-                >
-                  {t('nav.solution')}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('funktionen')}
-                  className="mobile-nav-link"
-                >
-                  {t('nav.features')}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('preise')}
-                  className="mobile-nav-link"
-                >
-                  {t('nav.pricing')}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('kontakt')}
-                  className="mobile-nav-link"
-                >
-                  {t('nav.contact')}
-                </button>
-                <button 
-                  onClick={openAboutModal}
-                  className="mobile-nav-link"
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden bg-white border-t border-neutral-medium"
+            >
+              <div className="py-4 space-y-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left py-2 px-4 text-neutral-dark hover:text-primary-blue hover:bg-primary-light rounded-lg transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <button
+                  onClick={onOpenAbout}
+                  className="block w-full text-left py-2 px-4 text-neutral-dark hover:text-primary-blue hover:bg-primary-light rounded-lg transition-colors duration-200"
                 >
                   {t('nav.about')}
                 </button>
-                <button 
-                  onClick={scrollToDemo}
-                  className="btn-brutal text-sm mt-4 w-full justify-center"
+                <button
+                  onClick={() => scrollToSection('kontakt')}
+                  className="w-full btn-primary mt-4"
                 >
-                  {t('header.demo')}
+                  Kostenlose Demo
                 </button>
-              </nav>
-            </div>
+              </div>
+            </motion.div>
           )}
-        </div>
-      </header>
-
-      <style jsx>{`
-        .nav-link {
-          @apply text-dental-blue-800 font-medium text-base transition-all duration-300 relative;
-          position: relative;
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: linear-gradient(90deg, #1E90FF, #00E68C);
-          transition: width 0.3s ease;
-        }
-        .nav-link:hover {
-          color: #0066FF;
-        }
-        .nav-link:hover::after {
-          width: 100%;
-        }
-        .mobile-nav-link {
-          @apply text-dental-blue-800 font-medium text-base py-3 px-4 rounded-lg transition-all duration-300;
-          @apply hover:bg-dental-blue-100/30 hover:text-dental-green-600;
-        }
-      `}</style>
-    </>
+        </AnimatePresence>
+      </div>
+    </motion.header>
   )
 }
+
+export default Header

@@ -1,101 +1,183 @@
-'use client'
-
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useLanguage } from '../contexts/LanguageContext'
 
-export default function Hero() {
+const Hero = () => {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   const scrollToContact = () => {
     const element = document.getElementById('kontakt')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const headerOffset = 120
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
     }
   }
 
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center particles-bg overflow-hidden"
-      style={{
-        background: `
-          linear-gradient(135deg, rgba(30, 144, 255, 0.95) 0%, rgba(0, 230, 140, 0.9) 50%, rgba(0, 207, 199, 0.85) 100%)
-        `
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Animated gradient overlay - Blue-Green-White theme */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-dental-blue-100/20 to-dental-green-100/30 opacity-40"></div>
-      
-      {/* Floating particles - Blue-Green-White theme */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-white/60 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-dental-green-400/80 rounded-full animate-bounce-slow"></div>
-        <div className="absolute bottom-40 left-20 w-3 h-3 bg-dental-blue-300/70 rounded-full float-medium"></div>
-        <div className="absolute bottom-20 right-10 w-1 h-1 bg-white/70 rounded-full float-fast"></div>
-        <div className="absolute top-60 left-1/3 w-2 h-2 bg-dental-teal-300/60 rounded-full animate-pulse-slow"></div>
-        <div className="absolute top-80 right-1/3 w-1 h-1 bg-dental-green-300/70 rounded-full float-slow"></div>
+      {/* Background Gradient - No Photo */}
+      <div className="absolute inset-0 z-0 bg-gradient-hero"></div>
+
+      {/* Simplified Background Elements */}
+      <div className="absolute inset-0 z-10">
+        <motion.div
+          animate={{ 
+            scale: [1, 1.05, 1]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 rounded-full blur-xl"
+        />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className={`text-center max-w-5xl mx-auto transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-        }`}>
-          
-          {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 hero-text">
-            {t('hero.title')}
-          </h1>
-          
-          {/* Subtitle */}
-          <p className={`text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-12 text-white/90 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>
+      {/* Content */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-20 container mx-auto px-6 text-center text-white"
+      >
+        <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
+          <motion.h1 
+            variants={itemVariants}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-2xl"
+            style={{
+              textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)'
+            }}
+          >
+            {t('hero.title')}{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-white">{t('hero.titleHighlight')}</span>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className="absolute bottom-0 left-0 w-full h-4 bg-accent-green/50 -z-10 rounded-sm"
+              />
+            </span>{' '}
+            <br className="hidden md:block" />
+            <span className="text-3xl md:text-5xl lg:text-6xl text-accent-green font-semibold">
+              {t('hero.titleSuffix')}
+            </span>
+          </motion.h1>
+
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+            style={{
+              textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)'
+            }}
+          >
             {t('hero.subtitle')}
-          </p>
-          
-          {/* CTA Button */}
-          <div className={`transition-all duration-1000 delay-600 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-          }`}>
-            <button 
+          </motion.p>
+
+          <motion.div variants={itemVariants}>
+            <motion.button
               onClick={scrollToContact}
-              className="inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg border border-white/30 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-300 group"
+              whileHover={{ 
+                scale: 1.05, 
+                y: -3,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-accent-green hover:bg-accent-green-600 text-white font-bold text-lg px-10 py-4 rounded-full 
+                         shadow-2xl hover:shadow-3xl transition-all duration-300 
+                         transform inline-flex items-center"
             >
-              <span className="mr-3">{t('hero.cta')}</span>
-              <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </button>
-          </div>
+              <span className="mr-2">{t('hero.cta')}</span>
+              <i className="fas fa-arrow-right"></i>
+            </motion.button>
+          </motion.div>
+        </motion.div>
 
-          {/* Floating elements - Blue-Green-White theme */}
-          <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br from-white/20 to-dental-blue-300/30 rounded-full blur-xl float-slow"></div>
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-dental-green-300/30 to-dental-teal-300/30 rounded-full blur-xl float-medium"></div>
-          <div className="absolute top-1/2 -left-20 w-16 h-16 bg-gradient-to-br from-dental-blue-400/30 to-white/20 rounded-full blur-xl float-fast"></div>
-        </div>
-      </div>
+        {/* Stats Section */}
+        <motion.div
+          variants={containerVariants}
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+        >
+          {[
+            { number: '24/7', text: t('hero.stats.support') },
+            { number: '100+', text: t('hero.stats.languages') },
+            { number: '90%', text: t('hero.stats.timeSaving') },
+            { number: '∞', text: t('hero.stats.learning') }
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border border-white/30 shadow-lg"
+            >
+              <div className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">{stat.number}</div>
+              <div className="text-sm md:text-base drop-shadow-md">{stat.text}</div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-      {/* Scroll indicator - Blue-Green-White theme */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}>
-        <div className="flex flex-col items-center space-y-2 text-white/80">
-          <span className="text-sm font-medium">Scroll</span>
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Brutal geometric shapes - Blue-Green-White theme */}
-      <div className="absolute top-20 right-20 w-32 h-32 border-4 border-white/20 rotate-45 float-slow"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-br from-dental-green-400/20 to-dental-blue-400/20 rotate-12 float-medium"></div>
-      <div className="absolute top-1/2 right-10 w-16 h-16 border-2 border-white/30 rounded-full float-fast"></div>
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.8 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-white/80 text-center"
+          >
+            <div className="text-sm mb-2 drop-shadow-md">{t('hero.scrollText')}</div>
+            <i className="fas fa-chevron-down text-xl drop-shadow-lg"></i>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
+
+export default Hero

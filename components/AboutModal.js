@@ -1,227 +1,323 @@
-'use client'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 
-import { useLanguage } from '../contexts/LanguageContext'
-
-export default function AboutModal() {
-  const { t } = useLanguage()
-
-  const closeModal = () => {
-    const modal = document.getElementById('about-modal')
-    if (modal) {
-      modal.classList.add('hidden')
-      modal.classList.remove('flex')
+const AboutModal = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        onClose()
+      }
     }
-  }
 
-  const scrollToContact = () => {
-    closeModal()
-    setTimeout(() => {
-      document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
-  }
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    }
 
-  const scrollToDemo = () => {
-    closeModal()
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen, onClose])
+
+  const scrollToSection = (sectionId) => {
+    onClose()
     setTimeout(() => {
-      document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerOffset = 100
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 300)
   }
 
   const expertise = [
     {
       icon: 'fas fa-robot',
-      title: t('about.expertise_ai_development.title'),
-      description: t('about.expertise_ai_development.description')
+      title: 'AI-Agent-Entwicklung',
+      description: 'Maßgeschneiderte Lösungen für jeden Anwendungsfall'
     },
     {
       icon: 'fas fa-comments',
-      title: t('about.expertise_voice_chat.title'),
-      description: t('about.expertise_voice_chat.description')
+      title: 'Voice & Chat AI',
+      description: 'Natürliche Kommunikationsfähigkeiten in über 100 Sprachen'
     },
     {
       icon: 'fas fa-plug',
-      title: t('about.expertise_integration.title'),
-      description: t('about.expertise_integration.description')
+      title: 'System-Integration',
+      description: 'Nahtlose Anbindung an bestehende Software und Workflows'
     },
     {
       icon: 'fas fa-brain',
-      title: t('about.expertise_deep_learning.title'),
-      description: t('about.expertise_deep_learning.description')
+      title: 'Deep Learning',
+      description: 'Kontinuierlich lernende AI-Systeme mit branchenspezifischem Fachwissen'
     },
     {
       icon: 'fas fa-headset',
-      title: t('about.expertise_support.title'),
-      description: t('about.expertise_support.description')
+      title: '24/7 Support',
+      description: 'Zuverlässiger Betrieb und kontinuierliche Optimierung'
     }
   ]
 
   const industries = [
-    { icon: 'fas fa-tooth', title: t('about.industry_dental') },
-    { icon: 'fas fa-shopping-cart', title: t('about.industry_ecommerce') },
-    { icon: 'fas fa-home', title: t('about.industry_real_estate') },
-    { icon: 'fas fa-briefcase', title: t('about.industry_consulting') }
+    { icon: 'fas fa-tooth', title: 'Zahnarztpraxen & Kliniken' },
+    { icon: 'fas fa-shopping-cart', title: 'E-Commerce & Retail' },
+    { icon: 'fas fa-home', title: 'Immobilien & Makler' },
+    { icon: 'fas fa-briefcase', title: 'Beratung & Services' }
   ]
 
-  const whyUs = [
+  const benefits = [
     {
       icon: 'fas fa-flag',
-      title: t('about.why_german.title'),
-      description: t('about.why_german.description')
+      title: 'Deutsche Entwicklung',
+      description: 'Höchste Qualitätsstandards und DSGVO-Konformität'
     },
     {
       icon: 'fas fa-industry',
-      title: t('about.why_expertise.title'),
-      description: t('about.why_expertise.description')
+      title: 'Branchenexpertise',
+      description: 'Tiefes Verständnis für spezifische Geschäftsprozesse'
     },
     {
       icon: 'fas fa-expand',
-      title: t('about.why_scalable.title'),
-      description: t('about.why_scalable.description')
+      title: 'Skalierbare Lösungen',
+      description: 'Von kleinen Automatisierungen bis zu Enterprise-Systemen'
     },
     {
       icon: 'fas fa-user-tie',
-      title: t('about.why_support.title'),
-      description: t('about.why_support.description')
+      title: 'Persönlicher Support',
+      description: 'Dedicated Success Manager für jeden Kunden'
     }
   ]
 
   const highlights = [
     {
       icon: 'fas fa-bolt',
-      title: t('about.highlight_fast.title'),
-      description: t('about.highlight_fast.description')
+      title: 'Schnelle Implementierung',
+      description: 'Ihr KI-Assistent in nur 72 Stunden einsatzbereit'
     },
     {
       icon: 'fas fa-shield-alt',
-      title: t('about.highlight_gdpr.title'),
-      description: t('about.highlight_gdpr.description')
+      title: 'GDPR-konform',
+      description: 'Datenschutz nach deutschen und europäischen Standards'
     },
     {
       icon: 'fas fa-cogs',
-      title: t('about.highlight_custom.title'),
-      description: t('about.highlight_custom.description')
+      title: 'Maßgeschneidert',
+      description: 'Individuelle Anpassung an Ihre Zahnarztpraxisabläufe'
     }
   ]
 
   return (
-    <div id="about-modal" className="modal-brutal hidden">
-      <div className="modal-content-brutal">
-        {/* Close Button */}
-        <button 
-          onClick={closeModal}
-          className="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl transition-colors z-10"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={onClose}
         >
-          <i className="fas fa-times"></i>
-        </button>
-
-        {/* Header */}
-        <div className="text-center mb-12 relative">
-          <div className="glass-brutal rounded-2xl p-8">
-            <i className="fas fa-rocket text-6xl gradient-text-brutal mb-6"></i>
-            <h2 className="text-3xl font-bold gradient-text-brutal mb-4">
-              {t('about.intro_title')}
-            </h2>
-            <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              {t('about.intro_description')}
-            </p>
-          </div>
-        </div>
-
-        {/* Expertise Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('about.expertise_title')}</h3>
-            <p className="text-gray-300">{t('about.expertise_subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {expertise.map((item, index) => (
-              <div key={index} className="card-brutal text-center">
-                <i className={`${item.icon} text-3xl gradient-text-brutal mb-4`}></i>
-                <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
-                <p className="text-gray-300 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Industries Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('about.industries_title')}</h3>
-            <p className="text-gray-300">{t('about.industries_subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {industries.map((industry, index) => (
-              <div key={index} className="glass-brutal rounded-xl p-6 text-center hover:bg-white/10 transition-colors">
-                <i className={`${industry.icon} text-2xl text-dental-blue-400 mb-3`}></i>
-                <h4 className="text-white font-medium text-sm">{industry.title}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Why Us Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('about.why_us_title')}</h3>
-            <p className="text-gray-300">{t('about.why_us_subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {whyUs.map((item, index) => (
-              <div key={index} className="card-brutal">
-                <i className={`${item.icon} text-3xl text-dental-teal-400 mb-4`}></i>
-                <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
-                <p className="text-gray-300 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Highlights Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('about.highlights_title')}</h3>
-            <p className="text-gray-300">{t('about.highlights_subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="card-brutal text-center border-t-4 border-dental-blue-500">
-                <i className={`${highlight.icon} text-3xl text-dental-blue-400 mb-4`}></i>
-                <h4 className="text-lg font-bold text-white mb-3">{highlight.title}</h4>
-                <p className="text-gray-300 text-sm">{highlight.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center pt-8 border-t border-white/10">
-          <h3 className="text-2xl font-bold text-white mb-4">{t('about.cta_title')}</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">{t('about.cta_description')}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={scrollToContact}
-              className="btn-brutal inline-flex items-center"
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+          
+          {/* Modal Content */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative bg-primary-blue-50 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-6 right-6 w-10 h-10 bg-primary-blue-200 hover:bg-primary-blue-300 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
             >
-              <span className="mr-3">{t('about.cta_consultation')}</span>
-              <i className="fas fa-calendar"></i>
+              <i className="fas fa-times text-primary-blue-800"></i>
             </button>
-            <button 
-              onClick={scrollToDemo}
-              className="px-8 py-4 font-bold text-white border-2 border-dental-teal-500 rounded-xl hover:bg-dental-teal-500/10 transition-all duration-300 inline-flex items-center justify-center"
-            >
-              <span className="mr-3">{t('about.cta_demo')}</span>
-              <i className="fas fa-play"></i>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      {/* Background overlay */}
-      <div 
-        className="absolute inset-0 bg-black/80 -z-10"
-        onClick={closeModal}
-      ></div>
-    </div>
+            <div className="p-8 md:p-12">
+              {/* Header */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-center mb-12"
+              >
+                <div className="w-20 h-20 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-rocket text-3xl text-white"></i>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary-blue-800 mb-4">
+                  Ihr Partner für professionelle AI-Agent-Entwicklung
+                </h2>
+                <p className="text-lg text-primary-blue-600 max-w-3xl mx-auto leading-relaxed">
+                  Unsere Firma DentalBotPro ist ein führender Spezialist für die professionelle Erstellung, 
+                  Programmierung und Erweiterung von AI-Agenten aller Art. Wir entwickeln intelligente 
+                  Automatisierungslösungen, die Unternehmen revolutionieren und ihre Effizienz drastisch steigern.
+                </p>
+              </motion.div>
+
+              {/* Expertise Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mb-16"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-primary-blue-800 mb-2">Unsere Expertise</h3>
+                  <p className="text-primary-blue-600">Maßgeschneiderte Lösungen für jeden Anwendungsfall</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {expertise.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                      className="bg-white border border-primary-blue-200 rounded-xl p-6 text-center"
+                    >
+                      <i className={`${item.icon} text-3xl gradient-text mb-4 block`}></i>
+                      <h4 className="font-semibold text-primary-blue-800 mb-2">{item.title}</h4>
+                      <p className="text-sm text-primary-blue-600">{item.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Industries Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="mb-16"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-primary-blue-800 mb-2">Für wen wir arbeiten</h3>
+                  <p className="text-primary-blue-600">Unsere AI-Agenten unterstützen Unternehmen jeder Größe</p>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {industries.map((industry, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      className="bg-white border-2 border-primary-blue-200 rounded-xl p-6 text-center hover:border-accent-green transition-colors duration-300"
+                    >
+                      <i className={`${industry.icon} text-3xl gradient-text mb-3 block`}></i>
+                      <h4 className="font-semibold text-primary-blue-800 text-sm">{industry.title}</h4>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Benefits Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mb-16"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-primary-blue-800 mb-2">Warum DentalBotPro?</h3>
+                  <p className="text-primary-blue-600">Die Vorteile unserer Lösungen</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {benefits.map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.7 + index * 0.1 }}
+                      className="bg-white border border-primary-blue-200 rounded-xl p-6 flex items-start space-x-4"
+                    >
+                      <div className="w-12 h-12 bg-accent-green rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i className={`${benefit.icon} text-lg text-white`}></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-primary-blue-800 mb-2">{benefit.title}</h4>
+                        <p className="text-sm text-primary-blue-600">{benefit.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Highlights Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="mb-12"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-primary-blue-800 mb-2">Unsere Highlights</h3>
+                  <p className="text-primary-blue-600">Was uns besonders macht</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {highlights.map((highlight, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.9 + index * 0.1 }}
+                      className="bg-white border border-primary-blue-200 rounded-xl p-6 text-center"
+                    >
+                      <i className={`${highlight.icon} text-3xl gradient-text mb-4 block`}></i>
+                      <h4 className="font-semibold text-primary-blue-800 mb-2">{highlight.title}</h4>
+                      <p className="text-sm text-primary-blue-600">{highlight.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* CTA Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0 }}
+                className="text-center bg-primary-blue-100 border border-primary-blue-200 rounded-2xl p-8"
+              >
+                <h3 className="text-2xl font-bold text-primary-blue-800 mb-4">
+                  Bereit für Ihren AI-Agenten?
+                </h3>
+                <p className="text-primary-blue-600 mb-6 max-w-2xl mx-auto">
+                  Lassen Sie uns gemeinsam die perfekte AI-Lösung für Ihr Unternehmen entwickeln.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => scrollToSection('kontakt')}
+                    className="btn-primary"
+                  >
+                    Jetzt Beratung anfragen
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => scrollToSection('kontakt')}
+                    className="btn-secondary"
+                  >
+                    Live Demo testen!
+                  </motion.button>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
+
+export default AboutModal
