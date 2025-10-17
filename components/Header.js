@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
-import LanguageWidget from './LanguageWidget'
 
 const Header = ({ onOpenAbout }) => {
   const { t } = useLanguage()
@@ -95,8 +94,8 @@ const Header = ({ onOpenAbout }) => {
             </motion.button>
           </nav>
 
-          {/* Right Side - CTA Button and Language Widget */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Right Side - CTA Button */}
+          <div className="hidden lg:flex items-center">
             {/* CTA Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
@@ -109,9 +108,6 @@ const Header = ({ onOpenAbout }) => {
             >
               Kostenlose Demo
             </motion.button>
-
-            {/* Language Widget */}
-            <LanguageWidget />
           </div>
 
           {/* Mobile Menu Button */}

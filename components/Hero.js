@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
@@ -47,13 +46,38 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Background - No Gradients */}
-      <div className="absolute inset-0 z-0 bg-primary-blue"></div>
+      {/* Background with Fresh Gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-blue via-primary-blue-600 to-accent-green-600"></div>
 
-      {/* Simplified Background Elements */}
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 z-10">
         <motion.div
           animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            scale: [1, 1.1, 1],
+            rotate: [360, 180, 0]
+          }}
+          transition={{ 
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-20 right-10 w-40 h-40 bg-accent-green/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, -20, 0],
             scale: [1, 1.05, 1]
           }}
           transition={{ 
@@ -61,18 +85,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-20 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl"
-        />
-        <motion.div
-          animate={{ 
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 rounded-full blur-xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-2xl"
         />
       </div>
 
@@ -83,36 +96,17 @@ const Hero = () => {
         animate="visible"
         className="relative z-20 container mx-auto px-6 text-center text-white"
       >
-        <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
+        <motion.div variants={itemVariants} className="max-w-6xl mx-auto">
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-2xl"
-            style={{
-              textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)'
-            }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
           >
-            {t('hero.title')}{' '}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-white">{t('hero.titleHighlight')}</span>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-                className="absolute bottom-0 left-0 w-full h-4 bg-accent-green/50 -z-10 rounded-sm"
-              />
-            </span>{' '}
-            <br className="hidden md:block" />
-            <span className="text-3xl md:text-5xl lg:text-6xl text-accent-green font-semibold">
-              {t('hero.titleSuffix')}
-            </span>
+            {t('hero.title')}
           </motion.h1>
 
           <motion.p 
             variants={itemVariants}
-            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light"
-            style={{
-              textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)'
-            }}
+            className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-5xl mx-auto leading-relaxed font-light"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -123,43 +117,55 @@ const Hero = () => {
               whileHover={{ 
                 scale: 1.05, 
                 y: -3,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)"
+                boxShadow: "0 20px 40px rgba(34, 197, 94, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-accent-green hover:bg-accent-green-600 text-white font-bold text-lg px-10 py-4 rounded-full 
+              className="bg-accent-green hover:bg-accent-green-600 text-white font-bold text-xl px-12 py-5 rounded-full 
                          shadow-2xl hover:shadow-3xl transition-all duration-300 
-                         transform inline-flex items-center"
+                         transform inline-flex items-center group"
             >
-              <span className="mr-2">{t('hero.cta')}</span>
-              <i className="fas fa-arrow-right"></i>
+              <span className="mr-3">{t('hero.cta')}</span>
+              <motion.i 
+                className="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
             </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Enhanced Stats Section */}
         <motion.div
           variants={containerVariants}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
         >
           {[
-            { number: '24/7', text: t('hero.stats.support') },
-            { number: '100+', text: t('hero.stats.languages') },
-            { number: '90%', text: t('hero.stats.timeSaving') },
-            { number: '∞', text: t('hero.stats.learning') }
+            { number: '24/7', text: t('hero.stats.support'), icon: 'clock' },
+            { number: '100+', text: t('hero.stats.languages'), icon: 'globe' },
+            { number: '80%', text: t('hero.stats.timeSaving'), icon: 'chart-line' },
+            { number: 'KI', text: t('hero.stats.learning'), icon: 'brain' }
           ].map((stat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border border-white/30 shadow-lg"
+              whileHover={{ 
+                scale: 1.1, 
+                y: -8,
+                rotateY: 5 
+              }}
+              className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-xl 
+                         hover:bg-white/25 transition-all duration-300 group cursor-pointer"
             >
-              <div className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">{stat.number}</div>
-              <div className="text-sm md:text-base drop-shadow-md">{stat.text}</div>
+              <div className="text-2xl mb-3 text-accent-green-200 group-hover:text-accent-green-100 transition-colors">
+                <i className={`fas fa-${stat.icon}`}></i>
+              </div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
+              <div className="text-sm md:text-base opacity-90">{stat.text}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Floating Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,12 +173,22 @@ const Hero = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 15, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-white/80 text-center"
+            className="text-white/90 text-center cursor-pointer group"
+            onClick={() => document.getElementById('probleme')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <div className="text-sm mb-2 drop-shadow-md">{t('hero.scrollText')}</div>
-            <i className="fas fa-chevron-down text-xl drop-shadow-lg"></i>
+            <div className="text-sm mb-3">{t('hero.scrollText')}</div>
+            <motion.i 
+              className="fas fa-chevron-down text-2xl group-hover:text-accent-green-200 transition-colors"
+              animate={{ 
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity 
+              }}
+            />
           </motion.div>
         </motion.div>
       </motion.div>

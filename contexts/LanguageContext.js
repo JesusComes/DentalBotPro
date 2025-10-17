@@ -23,137 +23,118 @@ const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Verpassen Sie nie wieder einen',
-      titleHighlight: 'Patientenanruf!',
-      titleSuffix: 'Auch nach Feierabend',
-      subtitle: 'Ihr intelligenter Assistent mit umfassendem Zahnmedizin-Wissen beantwortet Fachfragen, erklärt Behandlungen, bucht Termine und lernt die Besonderheiten Ihrer Zahnarztpraxis',
-      cta: 'Jetzt DentalBotPro live testen',
+      title: 'Verpassen Sie nie wieder einen Patientenanruf - Auch nach Feierabend',
+      subtitle: 'Ihr KI-Assistent beantwortet Anrufe, bucht Termine und betreut Patienten 24/7 - auf mehr als 100 Sprachen',
+      cta: 'Kostenlose Demo vereinbaren',
       stats: {
-        support: 'Zahnmedizin-Beratung',
-        languages: 'Sprachen',
-        timeSaving: 'Zeitersparnis',
-        learning: 'Lernfähig'
+        support: '24/7 Verfügbar',
+        languages: '100+ Sprachen',
+        timeSaving: '80% Zeitersparnis',
+        learning: 'KI-Powered'
       },
       scrollText: 'Nach unten scrollen'
     },
     // Problems Section
     problems: {
-      title: 'Kennen Sie diese Probleme in Ihrer Zahnarztpraxis?',
+      title: 'Kennen Sie diese Probleme in Ihrer Praxis?',
       subtitle: 'Diese typischen Herausforderungen kosten Sie täglich Patienten und Umsatz',
       items: [
         {
+          id: 1,
           title: 'Verpasste Anrufe nach Feierabend',
-          description: 'Jeder nicht angenommene Anruf nach 18 Uhr bedeutet potenziell einen verlorenen Neupatienten. Studien zeigen, dass 70% der Patienten bei nicht erreichter Zahnarztpraxis direkt zur Konkurrenz weiterwählen.'
+          description: 'Jeder nicht angenommene Anruf nach 18 Uhr bedeutet potenziell einen verlorenen Neupatienten. Studien zeigen, dass 70% der Patienten bei nicht erreichter Praxis direkt zur Konkurrenz weiterwählen. Diese stille Patientenflucht bleibt oft unbemerkt, während Sie kontinuierlich Neukunden verlieren.',
+          icon: 'phone-slash'
         },
         {
-          title: 'Chronische Personalengpässe',
-          description: 'Ihr bestens ausgebildetes Rezeptionsteam ist dauerhaft überlastet mit repetitiven Telefonaten zu Standardfragen, Öffnungszeiten und einfachen Terminanfragen.'
+          id: 2,
+          title: 'Chronische Personalengpässe an der Rezeption',
+          description: 'Ihr bestens ausgebildetes Rezeptionsteam ist dauerhaft überlastet mit repetitiven Telefonaten zu Standardzeiten, Öffnungszeiten und einfachen Terminanfragen. Dadurch bleibt keine Zeit für die wirklich wichtigen Aufgaben wie persönliche Patientenbetreuung und administrative Planung.',
+          icon: 'users'
         },
         {
+          id: 3,
           title: 'Lange Wartezeiten für Rückrufe',
-          description: 'Neue Patienten müssen oft tagelang auf Rückrufe warten - in Zeiten von Sofort-Service eine fatale Erfahrung. Jeder Tag Wartezeit reduziert Ihre Konversionsrate um bis zu 30%.'
+          description: 'Neue Patienten müssen oft tagelang auf Rückrufe warten - in Zeiten von Sofort-Service eine fatale Erfahrung. Die digitale Konkurrenz bietet Termine in Minuten, nicht in Tagen. Jeder Tag Wartezeit reduziert Ihre Konversionsrate um bis zu 30%.',
+          icon: 'clock'
         },
         {
-          title: 'Hohe Kosten für externes Callcenter',
-          description: 'Externe Callcenter kosten ein Vermögen und verstehen nichts von Zahnmedizin. Patienten merken sofort, dass sie mit Fremden sprechen, die Ihre Praxis nicht kennen.'
+          id: 4,
+          title: 'Unbemerkte Terminabsagen',
+          description: 'Absagen auf dem Anrufbeantworter bleiben häufig stundenlang unbemerkt. Wertvolle Behandlungstermine bleiben ungenutzt, während andere Patienten wochenlang warten müssen. Dies führt zu massiven Einnahmeausfällen und ineffizienter Kapazitätsplanung.',
+          icon: 'calendar-times'
         },
         {
-          title: 'Schlechte Erreichbarkeit am Telefon',
-          description: 'Ständig besetzte Leitungen frustrieren Patienten und führen zu verlorenen Terminanfragen. Besonders in Stoßzeiten gehen wertvolle Anrufe verloren.'
+          id: 5,
+          title: 'Sprachbarrieren bei internationalen Patienten',
+          description: 'In multilingualen Städten gehen wertvolle Patientenpotenziale verloren, weil Anfragen auf Türkisch, Arabisch oder anderen Sprachen nicht professionell bearbeitet werden können. Jede abgebrochene Kommunikation bedeutet verlorenes Geschäft.',
+          icon: 'language'
         },
         {
-          title: 'Unzufriedene Patienten durch Nichterreichbarkeit',
-          description: 'Patienten erwarten heute sofortige Antworten. Wer nicht erreichbar ist, verliert Vertrauen und Weiterempfehlungen. Schlechte Bewertungen sind die Folge.'
+          id: 6,
+          title: 'Termin-Chaos durch Doppelbuchungen',
+          description: 'Manuelle Terminverwaltung führt zu Doppelbuchungen und Terminkollisionen. Die Folge: gestresste Teams, verärgerte Patienten und Imageschaden. Jede Terminüberschneidung kostet Sie wertvolles Vertrauen.',
+          icon: 'exclamation-triangle'
+        },
+        {
+          id: 7,
+          title: 'Hohe Ausfallquote durch vergessene Termine',
+          description: 'Ohne systematische Erinnerungen liegt die Ausfallquote bei 15-20%. Das sind täglich mehrere ungenutzte Behandlungseinheiten bei gleichzeitig vollen Wartelisten - ein direkter finanzieller Verlust.',
+          icon: 'user-times'
+        },
+        {
+          id: 8,
+          title: 'Ineffiziente Arbeitszeitverteilung',
+          description: 'Ihr Fachpersonal verbringt 60-70% der Arbeitszeit mit einfachen Telefonaten statt mit wertschöpfender Patientenbetreuung. Sie zahlen Fachpersonal-Gehälter für Telefondienst - eine massive Fehlallokation Ihrer wertvollsten Ressource.',
+          icon: 'chart-line'
         }
       ]
     },
     // Solution Section
     solution: {
-      title: 'Die Lösung: Ihr intelligenter Zahnarztpraxis-Assistent',
-      subtitle: 'Unser KI-Agent mit tiefem Zahnmedizin-Fachwissen übernimmt sofort alle Patientenanfragen - telefonisch und per Chat auf Ihrer Website.',
-      features: [
-        'Sofortige Antworten auf alle Patientenanfragen',
-        'Automatische Terminbuchungen rund um die Uhr',
-        'Tiefes Zahnmedizin-Fachwissen und Behandlungserklärungen',
-        'Komplette Entlastung Ihres Zahnarztpraxisteams',
-        'Mehr Zeit für hochwertige Patientenbehandlung',
-        'Mehrsprachige Kommunikation (100+ Sprachen)',
-        'Intelligente Triage und Notfall-Weiterleitung',
-        'Automatische Patientenerinnerungen',
-        'Integration mit bestehenden Zahnarztpraxissystemen',
-        'Lernfähige AI - passt sich Ihrer Zahnarztpraxis an',
-        'Nachverfolgung verpasster Anrufe',
-        'Automatische Zahnarztpraxis-Bewertungen sammeln'
-      ]
+      title: 'Die Lösung: Ihr intelligenter Praxis-Assistent',
+      subtitle: 'Unser KI-Agent übernimmt sofort alle Patientenanfragen - telefonisch und per Chat auf Ihrer Website. Ohne Wartezeit, ohne Feierabend, ohne Urlaub.'
     },
     // Features Section
     features: {
-      title: 'Alles, was Ihre Zahnarztpraxis braucht',
+      title: 'Alles, was Ihre Praxis braucht',
       subtitle: 'Umfassende KI-Funktionen für moderne Zahnarztpraxen',
       items: [
         {
+          id: 1,
           title: '24/7 Erreichbarkeit',
-          description: 'Beantwortet Anrufe und Chats rund um die Uhr, auch nachts und am Wochenende. Ihre Patienten erreichen Sie immer.'
+          description: 'Beantwortet Anrufe und Chats rund um die Uhr, auch nachts und am Wochenende',
+          icon: 'clock'
         },
         {
+          id: 2,
           title: 'Intelligente Terminverwaltung',
-          description: 'Bucht, ändert und bestätigt Termine automatisch - Integration mit Ihrem bestehenden Kalender- und Zahnarztpraxissystem.'
+          description: 'Bucht, ändert und bestätigt Termine automatisch - Integration mit Ihrem Kalender',
+          icon: 'calendar-check'
         },
         {
-          title: 'Vollständig Mehrsprachig',
-          description: 'Kommuniziert perfekt in jeder Sprache - Deutsch, Englisch, Türkisch, Arabisch, Russisch, Polnisch und über 100 weitere Sprachen für maximale Patientenreichweite.'
+          id: 3,
+          title: 'Mehrsprachig',
+          description: 'Kommuniziert fließend auf Deutsch, Türkisch und Arabisch mit Ihren Patienten',
+          icon: 'globe'
         },
         {
+          id: 4,
           title: 'Patientendaten erfassen',
-          description: 'Speichert Name, Kontaktdaten und Terminwünsche automatisch in Ihrem CRM oder Zahnarztpraxissystem.'
+          description: 'Speichert Name, Kontaktdaten und Terminwünsche automatisch in Ihrem CRM',
+          icon: 'database'
         },
         {
+          id: 5,
           title: 'Automatische Erinnerungen',
-          description: 'Versendet Termin-SMS und E-Mails automatisch - Reduziert No-Shows um bis zu 70%.'
+          description: 'Versendet Termin-SMS und E-Mails - Reduziert No-Shows um 70%',
+          icon: 'bell'
         },
         {
+          id: 6,
           title: 'Notfall-Weiterleitung',
-          description: 'Erkennt echte Zahnnotfälle intelligent und leitet sofort an Ihre Notfallnummer oder den Bereitschaftsdienst weiter.'
-        },
-        {
-          title: 'Zahnmedizin-Fachwissen',
-          description: 'Beantwortet komplexe Fragen zu Zahnbehandlungen, Nachsorge und Prävention - basierend auf aktuellsten zahnmedizinischen Datenbanken und Leitlinien.'
-        },
-        {
-          title: 'Deep Learning',
-          description: 'Lernt kontinuierlich die spezifischen Abläufe, Behandlungsmethoden und Terminierungslogiken Ihrer Zahnarztpraxis - wird jeden Tag präziser.'
-        },
-        {
-          title: 'Zahnmedizinische Beratung',
-          description: 'Erklärt Zahnbehandlungsabläufe, beantwortet Fragen zu Kosten und bereitet Patienten optimal auf ihren Zahnarzttermin vor - menschlich und empathisch.'
+          description: 'Erkennt echte Notfälle und leitet sofort an Ihre Notfallnummer weiter',
+          icon: 'exclamation-triangle'
         }
-      ]
-    },
-    // Integration Section
-    integration: {
-      title: 'Arbeitet mit JEDER Zahnarztpraxis-Software - Garantiert',
-      subtitle: 'Kein Systemwechsel. Keine komplizierten Schnittstellen. Sofort einsatzbereit.',
-      steps: [
-        {
-          title: 'KI-Agent erfasst perfekt',
-          description: 'Ihr intelligenter Assistent sammelt alle wichtigen Informationen: Name, Kontaktdaten, Terminwunsch, bevorzugter Zahnarzt und Behandlungsgrund - strukturiert und vollständig.'
-        },
-        {
-          title: 'Zentrale Übersicht für Ihr Team',
-          description: 'Alle Terminanfragen erscheinen übersichtlich in Ihrem Dashboard, werden per E-Mail zugestellt oder landen direkt in Ihrem CRM (Google Calendar, HubSpot, Excel).'
-        },
-        {
-          title: 'Sie behalten die Kontrolle',
-          description: 'Ihr Team prüft die Anfragen und bestätigt Termine mit einem Klick in Ihrer gewohnten Zahnarztpraxissoftware.'
-        }
-      ],
-      standardTitle: 'Standard-Integration (Sofort verfügbar)',
-      standardSubtitle: 'Kompatibel mit allen gängigen Zahnarztpraxissystemen:',
-      premiumTitle: 'Premium-Option: Direkt-Integration',
-      premiumDescription: 'Für moderne Cloud-Systeme (CGM LIFE, DocCirrus) bieten wir auf Wunsch vollautomatische Synchronisation - Termine erscheinen direkt in Ihrer Zahnarztpraxissoftware ohne manuelle Übertragung.',
-      advantageTitle: '⚡ Der Vorteil unseres Ansatzes',
-      advantageDescription: 'Während andere Lösungen an veralteten Schnittstellen scheitern, funktioniert DentalBotPro universell - unabhängig davon, wie alt oder modern Ihre Zahnarztpraxissoftware ist. Sie erhalten strukturierte, hochwertige Patientendaten ohne technisches Risiko oder IT-Projekte.',
-      advantageExtra: 'Typischer Zeitgewinn: Eine Terminanfrage in Ihrer Software zu bestätigen dauert 10 Sekunden - das Telefonat hätte 5 Minuten gedauert. Sie sparen 90% der Zeit bei voller Kontrolle.'
     },
     // How it works Section
     howItWorks: {
@@ -161,18 +142,60 @@ const translations = {
       subtitle: 'In nur 3 Schritten zu Ihrem persönlichen KI-Assistenten',
       steps: [
         {
-          title: 'Setup in 72 Stunden',
-          description: 'Wir konfigurieren Ihren persönlichen KI-Assistenten speziell für Ihre Zahnarztpraxis und Ihre Arbeitsabläufe.'
+          id: 1,
+          title: 'Setup in 48 Stunden',
+          description: 'Wir konfigurieren Ihren persönlichen KI-Assistenten',
+          icon: 'cog'
         },
         {
-          title: 'Integration mit Ihrer Zahnarztpraxis',
-          description: 'Anbindung an Telefon, Website und optional an Ihre bestehende Zahnarztpraxissoftware für nahtlose Workflows.'
+          id: 2,
+          title: 'Integration mit Ihrer Praxis',
+          description: 'Anbindung an Telefon, Website und optional Praxissoftware',
+          icon: 'link'
         },
         {
+          id: 3,
           title: 'Sofort Einsatzbereit',
-          description: 'Ihr KI-Assistent startet und entlastet Ihr Team ab Tag 1 - messbare Ergebnisse von der ersten Stunde an.'
+          description: 'Ihr KI-Assistent startet und entlastet Ihr Team ab Tag 1',
+          icon: 'rocket'
         }
       ]
+    },
+    // Benefits Section
+    benefits: {
+      title: 'Warum Zahnarztpraxen auf DentalBotPro setzen',
+      items: [
+        {
+          id: 1,
+          title: 'Mehr Patienten',
+          description: 'Nie wieder verlorene Anfragen durch Nichterreichbarkeit',
+          icon: 'user-plus'
+        },
+        {
+          id: 2,
+          title: 'Weniger Stress',
+          description: 'Ihr Rezeptionsteam konzentriert sich auf wichtige Aufgaben',
+          icon: 'heart'
+        },
+        {
+          id: 3,
+          title: 'Höhere Effizienz',
+          description: '80% weniger Zeitaufwand für Terminkoordination',
+          icon: 'chart-line'
+        },
+        {
+          id: 4,
+          title: 'GDPR-konform',
+          description: 'Deutsche Server, vollständige Datenschutz-Compliance',
+          icon: 'shield-alt'
+        }
+      ]
+    },
+    // Live Demo Section
+    liveDemo: {
+      title: 'Testen Sie jetzt unseren KI-Assistenten',
+      subtitle: 'Chatten Sie direkt hier mit unserem Demo-Assistenten und erleben Sie, wie natürlich die Konversation abläuft'
+    },
     },
     // Pricing Section
     pricing: {
@@ -235,47 +258,21 @@ const translations = {
       ],
       note: 'Alle Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer. Keine Mindestlaufzeit. Monatlich kündbar.'
     },
-    // Benefits Section
-    benefits: {
-      title: 'Ihre Vorteile mit DentalBotPro',
-      subtitle: 'Messbare Verbesserungen für Ihre Zahnarztpraxis',
-      items: [
-        {
-          title: 'Mehr Neupatienten',
-          description: 'Durch 24/7 Erreichbarkeit und professionelle Erstbetreuung gewinnen Sie messbar mehr Neupatienten.'
-        },
-        {
-          title: 'Höhere Patientenzufriedenheit',
-          description: 'Sofortige, kompetente Antworten führen zu zufriedeneren Patienten und besseren Bewertungen.'
-        },
-        {
-          title: 'Entlastung des Teams',
-          description: 'Ihr Personal kann sich auf wichtige Aufgaben konzentrieren statt auf repetitive Telefonate.'
-        },
-        {
-          title: 'Kostenersparnis',
-          description: 'Reduzieren Sie Personalkosten für Telefonbetreuung bei gleichzeitig besserer Servicequalität.'
-        }
-      ]
-    },
     // Demo Section
-    demo: {
-      title: 'Erleben Sie DentalBotPro live in Aktion',
-      subtitle: 'Sehen Sie in einer persönlichen Demo, wie unser KI-Assistent Ihre Zahnarztpraxis revolutioniert und Ihnen dabei hilft, mehr Patienten zu gewinnen und zu betreuen.',
-      placeholder: 'Hier wird Ihr personalisiertes DentalBotPro Demo-Video angezeigt',
-      cta: 'Jetzt kostenlose Demo buchen'
+    liveDemo: {
+      title: 'Testen Sie jetzt unseren KI-Assistenten',
+      subtitle: 'Chatten Sie direkt hier mit unserem Demo-Assistenten und erleben Sie, wie natürlich die Konversation abläuft'
     },
     // Contact Section
     contact: {
-      title: 'Kontakt aufnehmen',
-      subtitle: 'Bereit für DentalBotPro? Kontaktieren Sie uns noch heute!',
+      title: 'Starten Sie noch heute',
+      subtitle: 'Vereinbaren Sie Ihre kostenlose 30-minütige Demo und sehen Sie DentalBotPro live in Aktion',
       form: {
-        name: 'Ihr Name',
-        email: 'E-Mail-Adresse',
-        phone: 'Telefonnummer',
+        name: 'Name',
+        email: 'E-Mail',
+        phone: 'Telefon',
         practice: 'Praxisname',
-        message: 'Nachricht (optional)',
-        submit: 'Nachricht senden',
+        submit: 'Jetzt Demo buchen',
         success: 'Vielen Dank! Wir melden uns bald bei Ihnen.'
       }
     },
