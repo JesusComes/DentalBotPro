@@ -44,13 +44,13 @@ export default function Pricing() {
   }
 
   return (
-    <section id="preise" className="py-24 bg-slate-800/30">
+    <section id="preise" className="py-24 bg-gradient-to-br from-slate-50/80 via-gray-50/60 to-blue-50/40">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black mb-6 gradient-text-brutal">
             {t('pricing.title')}
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-slate-600">
             {t('pricing.subtitle')}
           </p>
         </div>
@@ -72,12 +72,12 @@ export default function Pricing() {
               )}
 
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">{plan.name}</h3>
                 <div className="mb-6">
                   <div className="text-4xl font-black gradient-text-brutal mb-2">
                     {plan.price}
                   </div>
-                  <div className="text-gray-400">{plan.period}</div>
+                  <div className="text-slate-500">{plan.period}</div>
                   <div className="mt-4 space-y-1">
                     <div className="text-sm text-gray-300">{plan.setupPrice}</div>
                     <div className="text-sm text-gray-400">{plan.setupTime}</div>

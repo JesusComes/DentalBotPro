@@ -11,7 +11,7 @@
   }
   
   body {
-    @apply bg-slate-950 text-white antialiased overflow-x-hidden;
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 text-slate-900 antialiased overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
@@ -27,7 +27,7 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-slate-900;
+    @apply bg-slate-100;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -38,13 +38,13 @@
     @apply from-dental-blue-400 to-dental-teal-400;
   }
 
-  /* Brutal Glass Effect */
+  /* Brutal Glass Effect - Light Theme */
   .glass-brutal {
-    @apply backdrop-blur-2xl bg-white/5 border border-white/10;
+    @apply backdrop-blur-2xl bg-white/80 border border-slate-200/50 shadow-xl;
     box-shadow: 
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-      0 20px 40px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.05);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(59, 130, 246, 0.1);
   }
 
   /* Neon Glow Effect */
@@ -61,7 +61,7 @@
 
   .card-brutal::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 transition-opacity duration-500;
+    @apply absolute inset-0 bg-gradient-to-br from-blue-100/30 via-transparent to-cyan-100/30 opacity-0 transition-opacity duration-500;
     border-radius: inherit;
   }
 
@@ -72,9 +72,9 @@
   .card-brutal:hover {
     transform: translateY(-8px) rotateX(5deg);
     box-shadow: 
-      0 25px 50px rgba(0, 0, 0, 0.4),
-      0 0 30px rgba(59, 130, 246, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 0 30px rgba(59, 130, 246, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   /* Brutal Button */
@@ -109,9 +109,9 @@
     transform: translateY(0) scale(0.98);
   }
 
-  /* Hero Text Animation */
+  /* Hero Text Animation - Light Theme */
   .hero-text {
-    @apply bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-800 via-blue-700 to-cyan-700 bg-clip-text text-transparent;
     animation: textShine 3s ease-in-out infinite alternate;
   }
 
@@ -151,11 +151,11 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(2px 2px at 20px 30px, rgba(59, 130, 246, 0.3), transparent),
-      radial-gradient(2px 2px at 40px 70px, rgba(0, 180, 166, 0.3), transparent),
-      radial-gradient(1px 1px at 90px 40px, rgba(139, 92, 246, 0.3), transparent),
-      radial-gradient(1px 1px at 130px 80px, rgba(245, 158, 11, 0.3), transparent),
-      radial-gradient(2px 2px at 160px 30px, rgba(236, 72, 153, 0.3), transparent);
+      radial-gradient(2px 2px at 20px 30px, rgba(59, 130, 246, 0.4), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(0, 180, 166, 0.4), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(139, 92, 246, 0.4), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(245, 158, 11, 0.4), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(236, 72, 153, 0.4), transparent);
     background-repeat: repeat;
     background-size: 200px 150px;
     animation: particles 20s linear infinite;
@@ -171,10 +171,10 @@
     }
   }
 
-  /* Brutal Modal */
+  /* Brutal Modal - Light Theme */
   .modal-brutal {
     @apply fixed inset-0 z-50 flex items-center justify-center;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
   }
 
@@ -194,11 +194,25 @@
     }
   }
 
-  /* Brutal Gradient Text */
+  /* Brutal Gradient Text - Light Theme */
   .gradient-text-brutal {
-    @apply bg-gradient-to-r from-dental-blue-400 via-dental-teal-400 to-dental-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-dental-blue-600 via-dental-teal-600 to-dental-purple-600 bg-clip-text text-transparent;
     background-size: 200% 200%;
     animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  /* Navigation Link Styles - Light Theme */
+  .nav-link {
+    @apply text-slate-700 hover:text-dental-blue-600 font-medium transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-dental-blue-600 to-dental-teal-600 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   @keyframes gradientShift {
@@ -240,10 +254,10 @@
     }
   }
 
-  /* Brutal Form Styling */
+  /* Brutal Form Styling - Light Theme */
   .form-brutal input,
   .form-brutal textarea {
-    @apply glass-brutal rounded-xl px-6 py-4 text-white placeholder-gray-400 border-0 focus:outline-none focus:ring-2 focus:ring-dental-blue-500;
+    @apply glass-brutal rounded-xl px-6 py-4 text-slate-800 placeholder-slate-500 border-0 focus:outline-none focus:ring-2 focus:ring-dental-blue-500;
     transition: all 0.3s ease;
   }
 
@@ -251,9 +265,9 @@
   .form-brutal textarea:focus {
     transform: translateY(-2px);
     box-shadow: 
-      0 10px 20px rgba(0, 0, 0, 0.2),
-      0 0 0 2px rgba(59, 130, 246, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 10px 20px rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgba(59, 130, 246, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
   /* Section transitions */

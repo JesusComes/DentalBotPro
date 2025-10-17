@@ -43,7 +43,7 @@ export default function Header() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? 'glass-brutal shadow-2xl py-4' 
-          : 'bg-slate-950/80 backdrop-blur-xl py-6'
+          : 'bg-white/80 backdrop-blur-xl py-6'
       }`}>
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
@@ -53,7 +53,9 @@ export default function Header() {
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <div className="w-12 h-12 bg-gradient-brutal rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-glow">
-                <i className="fas fa-robot text-white text-xl"></i>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
               <span className="text-2xl font-bold gradient-text-brutal">
                 DentalBotPro

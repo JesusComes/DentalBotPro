@@ -54,9 +54,9 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-brutal': 'linear-gradient(135deg, #0A66C2 0%, #00B4A6 50%, #8B5CF6 100%)',
-        'gradient-hero': 'linear-gradient(135deg, rgba(10, 102, 194, 0.95) 0%, rgba(0, 180, 166, 0.9) 100%)',
-        'gradient-card': 'linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'gradient-brutal': 'linear-gradient(135deg, #3B82F6 0%, #00B4A6 50%, #8B5CF6 100%)',
+        'gradient-hero': 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 180, 166, 0.1) 100%)',
+        'gradient-card': 'linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
