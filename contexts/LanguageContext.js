@@ -135,6 +135,7 @@ const translations = {
           description: 'Erkennt echte Notfälle und leitet sofort an Ihre Notfallnummer weiter',
           icon: 'exclamation-triangle'
         }
+      ]
     },
     // How it works Section
     howItWorks: {
