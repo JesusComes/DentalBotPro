@@ -7,11 +7,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-gray-200;
   }
   
   body {
-    @apply bg-slate-950 text-white font-[family-name:var(--font-inter)] antialiased overflow-x-hidden;
+    @apply bg-slate-950 text-white antialiased overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
@@ -226,6 +226,7 @@
     background: linear-gradient(45deg, #3B82F6, #00B4A6, #8B5CF6);
     border-radius: inherit;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: borderGlow 3s ease-in-out infinite alternate;
   }
