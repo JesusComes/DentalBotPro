@@ -47,8 +47,8 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Background Gradient - No Photo */}
-      <div className="absolute inset-0 z-0 bg-gradient-hero"></div>
+      {/* Background - No Gradients */}
+      <div className="absolute inset-0 z-0 bg-primary-blue"></div>
 
       {/* Simplified Background Elements */}
       <div className="absolute inset-0 z-10">

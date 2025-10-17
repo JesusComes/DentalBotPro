@@ -38,20 +38,32 @@ const translations = {
     },
     // Problems Section
     problems: {
-      title: 'Die Probleme Ihrer Zahnarztpraxis',
-      subtitle: 'Erkennen Sie sich wieder?',
+      title: 'Kennen Sie diese Probleme in Ihrer Zahnarztpraxis?',
+      subtitle: 'Diese typischen Herausforderungen kosten Sie täglich Patienten und Umsatz',
       items: [
         {
           title: 'Verpasste Anrufe nach Feierabend',
-          description: 'Das Problem: Jeder nicht angenommene Anruf nach 18 Uhr bedeutet potenziell einen verlorenen Neupatienten. Studien zeigen, dass 70% der Patienten bei nicht erreichter Zahnarztpraxis direkt zur Konkurrenz weiterwählen.'
+          description: 'Jeder nicht angenommene Anruf nach 18 Uhr bedeutet potenziell einen verlorenen Neupatienten. Studien zeigen, dass 70% der Patienten bei nicht erreichter Zahnarztpraxis direkt zur Konkurrenz weiterwählen.'
         },
         {
           title: 'Chronische Personalengpässe',
-          description: 'Das Problem: Ihr bestens ausgebildetes Rezeptionsteam ist dauerhaft überlastet mit repetitiven Telefonaten zu Standardfragen, Öffnungszeiten und einfachen Terminanfragen.'
+          description: 'Ihr bestens ausgebildetes Rezeptionsteam ist dauerhaft überlastet mit repetitiven Telefonaten zu Standardfragen, Öffnungszeiten und einfachen Terminanfragen.'
         },
         {
           title: 'Lange Wartezeiten für Rückrufe',
-          description: 'Das Problem: Neue Patienten müssen oft tagelang auf Rückrufe warten - in Zeiten von Sofort-Service eine fatale Erfahrung. Jeder Tag Wartezeit reduziert Ihre Conversion-Rate um 15%.'
+          description: 'Neue Patienten müssen oft tagelang auf Rückrufe warten - in Zeiten von Sofort-Service eine fatale Erfahrung. Jeder Tag Wartezeit reduziert Ihre Konversionsrate um bis zu 30%.'
+        },
+        {
+          title: 'Hohe Kosten für externes Callcenter',
+          description: 'Externe Callcenter kosten ein Vermögen und verstehen nichts von Zahnmedizin. Patienten merken sofort, dass sie mit Fremden sprechen, die Ihre Praxis nicht kennen.'
+        },
+        {
+          title: 'Schlechte Erreichbarkeit am Telefon',
+          description: 'Ständig besetzte Leitungen frustrieren Patienten und führen zu verlorenen Terminanfragen. Besonders in Stoßzeiten gehen wertvolle Anrufe verloren.'
+        },
+        {
+          title: 'Unzufriedene Patienten durch Nichterreichbarkeit',
+          description: 'Patienten erwarten heute sofortige Antworten. Wer nicht erreichbar ist, verliert Vertrauen und Weiterempfehlungen. Schlechte Bewertungen sind die Folge.'
         }
       ]
     },
@@ -307,20 +319,32 @@ const translations = {
     },
     // Problems Section
     problems: {
-      title: 'Your Dental Practice Problems',
-      subtitle: 'Do you recognize yourself?',
+      title: 'Do You Know These Problems in Your Dental Practice?',
+      subtitle: 'These typical challenges cost you patients and revenue daily',
       items: [
         {
-          title: 'Missed calls after hours',
-          description: 'The problem: Every unanswered call after 6 PM potentially means a lost new patient. Studies show that 70% of patients call the competition directly when their dental practice is unreachable.'
+          title: 'Missed Calls After Hours',
+          description: 'Every unanswered call after 6 PM potentially means a lost new patient. Studies show that 70% of patients call competitors directly when unable to reach a dental practice.'
         },
         {
-          title: 'Chronic staff shortages',
-          description: 'The problem: Your well-trained reception team is constantly overwhelmed with repetitive phone calls about standard questions, opening hours and simple appointment requests.'
+          title: 'Chronic Staff Shortages',
+          description: 'Your well-trained reception team is permanently overloaded with repetitive phone calls about standard questions, opening hours and simple appointment requests.'
         },
         {
-          title: 'Long waiting times for callbacks',
-          description: 'The problem: New patients often have to wait days for callbacks - a fatal experience in times of instant service. Each day of waiting reduces your conversion rate by 15%.'
+          title: 'Long Waiting Times for Callbacks',
+          description: 'New patients often have to wait days for callbacks - a fatal experience in times of instant service. Each day of waiting reduces your conversion rate by up to 30%.'
+        },
+        {
+          title: 'High Costs for External Call Centers',
+          description: 'External call centers cost a fortune and understand nothing about dentistry. Patients immediately notice they\'re speaking with strangers who don\'t know your practice.'
+        },
+        {
+          title: 'Poor Phone Accessibility',
+          description: 'Constantly busy lines frustrate patients and lead to lost appointment requests. Valuable calls are lost especially during peak hours.'
+        },
+        {
+          title: 'Unsatisfied Patients Due to Unreachability',
+          description: 'Patients today expect immediate answers. Those who can\'t be reached lose trust and referrals. Poor reviews are the consequence.'
         }
       ]
     },
@@ -576,20 +600,32 @@ const translations = {
     },
     // Problems Section
     problems: {
-      title: 'Les Problèmes de Votre Cabinet Dentaire',
-      subtitle: 'Vous reconnaissez-vous?',
+      title: 'Connaissez-vous ces Problèmes dans votre Cabinet Dentaire?',
+      subtitle: 'Ces défis typiques vous coûtent des patients et des revenus quotidiennement',
       items: [
         {
-          title: 'Appels manqués après les heures',
-          description: 'Le problème: Chaque appel non répondu après 18h signifie potentiellement un nouveau patient perdu. Les études montrent que 70% des patients appellent directement la concurrence quand leur cabinet dentaire n\'est pas joignable.'
+          title: 'Appels Manqués Après les Heures',
+          description: 'Chaque appel sans réponse après 18h signifie potentiellement un nouveau patient perdu. Les études montrent que 70% des patients appellent directement la concurrence quand ils ne peuvent pas joindre un cabinet dentaire.'
         },
         {
-          title: 'Pénuries chroniques de personnel',
-          description: 'Le problème: Votre équipe de réception bien formée est constamment débordée par des appels téléphoniques répétitifs sur des questions standard, les heures d\'ouverture et les demandes de rendez-vous simples.'
+          title: 'Pénuries Chroniques de Personnel',
+          description: 'Votre équipe de réception bien formée est surchargée en permanence avec des appels répétitifs sur des questions standard, les heures d\'ouverture et les demandes de rendez-vous simples.'
         },
         {
-          title: 'Longs délais d\'attente pour les rappels',
-          description: 'Le problème: Les nouveaux patients doivent souvent attendre des jours pour les rappels - une expérience fatale à l\'ère du service instantané. Chaque jour d\'attente réduit votre taux de conversion de 15%.'
+          title: 'Longs Temps d\'Attente pour les Rappels',
+          description: 'Les nouveaux patients doivent souvent attendre des jours pour les rappels - une expérience fatale à l\'ère du service instantané. Chaque jour d\'attente réduit votre taux de conversion jusqu\\à 30%.'
+        },
+        {
+          title: 'Coûts Élevés pour Centre d\'Appels Externe',
+          description: 'Les centres d\'appels externes coûtent une fortune et ne comprennent rien à la dentisterie. Les patients remarquent immédiatement qu\'ils parlent avec des étrangers qui ne connaissent pas votre cabinet.'
+        },
+        {
+          title: 'Mauvaise Accessibilité Téléphonique',
+          description: 'Les lignes constamment occupées frustrent les patients et conduisent à des demandes de rendez-vous perdues. Des appels précieux sont perdus surtout pendant les heures de pointe.'
+        },
+        {
+          title: 'Patients Insatisfaits par l\'Injoignabilité',
+          description: 'Les patients d\'aujourd\'hui s\'attendent à des réponses immédiates. Ceux qui ne peuvent pas être joints perdent la confiance et les recommandations. De mauvais avis en sont la conséquence.'
         }
       ]
     },
@@ -606,6 +642,204 @@ const translations = {
         submit: 'Envoyer le Message',
         success: 'Merci! Nous vous contacterons bientôt.'
       }
+    },
+    // Solution Section
+    solution: {
+      title: 'La Solution: Votre Assistant Intelligent de Cabinet Dentaire',
+      subtitle: 'Notre agent IA avec des connaissances dentaires approfondies gère immédiatement toutes les demandes de patients - par téléphone et chat sur votre site web.',
+      features: [
+        'Réponses instantanées à toutes les demandes de patients',
+        'Réservations automatiques de rendez-vous 24h/24',
+        'Connaissances dentaires approfondies et explications de traitements',
+        'Soulagement complet de votre équipe de cabinet dentaire',
+        'Plus de temps pour des soins de haute qualité',
+        'Communication multilingue (100+ langues)',
+        'Triage intelligent et redirection d\'urgence',
+        'Rappels automatiques de patients',
+        'Intégration avec les systèmes de cabinet dentaire existants',
+        'IA apprenante - s\'adapte à votre cabinet dentaire',
+        'Suivi des appels manqués',
+        'Collecte automatique d\'avis de cabinet dentaire'
+      ]
+    },
+    // Features Section
+    features: {
+      title: 'Tout ce dont votre Cabinet Dentaire a besoin',
+      subtitle: 'Fonctions IA complètes pour les cabinets dentaires modernes',
+      items: [
+        {
+          title: 'Disponibilité 24/7',
+          description: 'Répond aux appels et chats 24h/24, même la nuit et le week-end. Vos patients peuvent toujours vous joindre.'
+        },
+        {
+          title: 'Gestion Intelligente des Rendez-vous',
+          description: 'Réserve, modifie et confirme les rendez-vous automatiquement - intégration avec votre calendrier et système de cabinet dentaire existant.'
+        },
+        {
+          title: 'Entièrement Multilingue',
+          description: 'Communique parfaitement dans toutes les langues - Allemand, Anglais, Turc, Arabe, Russe, Polonais et plus de 100 autres langues pour une portée maximale des patients.'
+        },
+        {
+          title: 'Capture de Données Patients',
+          description: 'Stocke automatiquement nom, coordonnées et préférences de rendez-vous dans votre CRM ou système de cabinet dentaire.'
+        },
+        {
+          title: 'Rappels Automatiques',
+          description: 'Envoie automatiquement des SMS et e-mails de rendez-vous - réduit les absences jusqu\'à 70%.'
+        },
+        {
+          title: 'Redirection d\'Urgence',
+          description: 'Reconnaît intelligemment les vraies urgences dentaires et redirige immédiatement vers votre numéro d\'urgence ou service de garde.'
+        },
+        {
+          title: 'Expertise Dentaire',
+          description: 'Répond aux questions complexes sur les traitements dentaires, les soins post-opératoires et la prévention - basé sur les dernières bases de données dentaires.'
+        },
+        {
+          title: 'Apprentissage Profond',
+          description: 'Apprend continuellement les processus spécifiques, méthodes de traitement et logique de planification de votre cabinet dentaire - devient plus précis chaque jour.'
+        },
+        {
+          title: 'Consultation Dentaire',
+          description: 'Explique les procédures de traitement dentaire, répond aux questions de coûts et prépare optimalement les patients pour leur rendez-vous dentaire - humain et empathique.'
+        }
+      ]
+    },
+    // Integration Section
+    integration: {
+      title: 'Fonctionne avec TOUT Logiciel de Cabinet Dentaire - Garanti',
+      subtitle: 'Aucun changement de système. Aucune interface compliquée. Prêt à utiliser immédiatement.',
+      steps: [
+        {
+          title: 'L\'agent IA capture parfaitement',
+          description: 'Votre assistant intelligent collecte toutes les informations importantes: nom, coordonnées, demande de rendez-vous, dentiste préféré et raison du traitement - structuré et complet.'
+        },
+        {
+          title: 'Vue d\'ensemble centrale pour votre équipe',
+          description: 'Toutes les demandes de rendez-vous apparaissent clairement dans votre tableau de bord, sont livrées par e-mail ou vont directement dans votre CRM (Google Calendar, HubSpot, Excel).'
+        },
+        {
+          title: 'Vous gardez le contrôle',
+          description: 'Votre équipe examine les demandes et confirme les rendez-vous en un clic dans votre logiciel de cabinet dentaire familier.'
+        }
+      ],
+      standardTitle: 'Intégration Standard (Immédiatement disponible)',
+      standardSubtitle: 'Compatible avec tous les systèmes de cabinet dentaire courants:',
+      premiumTitle: 'Option Premium: Intégration Directe',
+      premiumDescription: 'Pour les systèmes cloud modernes (CGM LIFE, DocCirrus), nous offrons une synchronisation entièrement automatique sur demande - les rendez-vous apparaissent directement dans votre logiciel de cabinet dentaire sans transfert manuel.',
+      advantageTitle: '⚡ L\'Avantage de Notre Approche',
+      advantageDescription: 'Alors que d\'autres solutions échouent en raison d\'interfaces obsolètes, DentalBotPro fonctionne universellement - peu importe l\'âge ou la modernité de votre logiciel de cabinet dentaire. Vous recevez des données patients structurées et de haute qualité sans risque technique ou projets informatiques.',
+      advantageExtra: 'Gain de temps typique: Confirmer une demande de rendez-vous dans votre logiciel prend 10 secondes - l\'appel téléphonique aurait pris 5 minutes. Vous économisez 90% du temps tout en gardant le contrôle total.'
+    },
+    // How it works Section
+    howItWorks: {
+      title: 'Comment ça Marche',
+      subtitle: 'Votre assistant IA personnel en seulement 3 étapes',
+      steps: [
+        {
+          title: 'Configuration en 72 heures',
+          description: 'Nous configurons votre assistant IA personnel spécifiquement pour votre cabinet dentaire et vos flux de travail.'
+        },
+        {
+          title: 'Intégration avec votre cabinet dentaire',
+          description: 'Connexion au téléphone, site web et optionnellement à votre logiciel de cabinet dentaire existant pour des flux de travail sans couture.'
+        },
+        {
+          title: 'Prêt à utiliser immédiatement',
+          description: 'Votre assistant IA démarre et soulage votre équipe dès le jour 1 - résultats mesurables dès la première heure.'
+        }
+      ]
+    },
+    // Pricing Section
+    pricing: {
+      title: 'Prix Transparents - Aucun Coût Caché',
+      subtitle: 'Agents IA avec différents niveaux d\'expertise dentaire pour chaque taille de cabinet dentaire',
+      plans: [
+        {
+          name: 'Pro',
+          price: '149€',
+          period: 'mensuel',
+          setupFee: 'Prix de configuration: 299€',
+          setupTime: 'Temps de configuration: 72 heures',
+          features: [
+            'Chatbot de site web',
+            'Réservation de rendez-vous 24/7',
+            'Questions dentaires de base',
+            'Support multilingue',
+            'Intégration e-mail',
+            'Rappels automatiques'
+          ],
+          cta: 'Acheter maintenant',
+          popular: false
+        },
+        {
+          name: 'Premium',
+          price: '299€',
+          period: 'mensuel',
+          setupFee: 'Prix de configuration: 499€',
+          setupTime: 'Temps de configuration: 1 semaine',
+          features: [
+            'Tout du plan Pro',
+            'Vocal: IA peut parler',
+            'Conseil dentaire avancé',
+            'Évaluation initiale des symptômes',
+            'Redirection d\'urgence intelligente',
+            'Intégration CRM'
+          ],
+          cta: 'Acheter maintenant',
+          popular: true,
+          badge: 'POPULAIRE'
+        },
+        {
+          name: 'Enterprise',
+          price: '499€',
+          period: 'mensuel',
+          setupFee: 'Prix de configuration: 999€',
+          setupTime: 'Temps de configuration: 2-4 semaines',
+          features: [
+            'Tout du plan Premium',
+            'Intégration complète du système de cabinet dentaire',
+            'IA dentaire avancée avec connaissance spécialisée',
+            'Gestion multi-sites',
+            'Gestionnaire de compte personnel',
+            'Support prioritaire',
+            'Personnalisations individuelles'
+          ],
+          cta: 'Acheter maintenant',
+          popular: false
+        }
+      ],
+      note: 'Tous les prix s\'entendent hors TVA légale. Aucune durée minimale. Résiliation mensuelle.'
+    },
+    // Benefits Section
+    benefits: {
+      title: 'Vos Avantages avec DentalBotPro',
+      subtitle: 'Améliorations mesurables pour votre cabinet dentaire',
+      items: [
+        {
+          title: 'Plus de Nouveaux Patients',
+          description: 'Grâce à la disponibilité 24/7 et aux soins initiaux professionnels, vous gagnez mesurément plus de nouveaux patients.'
+        },
+        {
+          title: 'Satisfaction Patient Plus Élevée',
+          description: 'Des réponses instantanées et compétentes conduisent à des patients plus satisfaits et de meilleures évaluations.'
+        },
+        {
+          title: 'Soulagement de l\'Équipe',
+          description: 'Votre personnel peut se concentrer sur des tâches importantes au lieu d\'appels téléphoniques répétitifs.'
+        },
+        {
+          title: 'Économies de Coûts',
+          description: 'Réduisez les coûts de personnel pour l\'assistance téléphonique tout en améliorant la qualité de service.'
+        }
+      ]
+    },
+    // Demo Section
+    demo: {
+      title: 'Découvrez DentalBotPro en Action en Direct',
+      subtitle: 'Voyez dans une démonstration personnelle comment notre assistant IA révolutionne votre cabinet dentaire et vous aide à gagner et soigner plus de patients.',
+      placeholder: 'Ici sera affiché votre vidéo de démonstration DentalBotPro personnalisée',
+      cta: 'Réserver une démonstration gratuite maintenant'
     },
     // Footer
     footer: {
@@ -647,22 +881,232 @@ const translations = {
     },
     // Problems Section
     problems: {
-      title: 'Проблемы Вашей Стоматологической Практики',
-      subtitle: 'Узнаёте себя?',
+      title: 'Знакомы ли Вам Эти Проблемы в Вашей Стоматологической Практике?',
+      subtitle: 'Эти типичные вызовы ежедневно стоят вам пациентов и доходов',
       items: [
         {
-          title: 'Пропущенные звонки после часов',
-          description: 'Проблема: Каждый неотвеченный звонок после 18:00 потенциально означает потерянного нового пациента. Исследования показывают, что 70% пациентов сразу звонят конкурентам, когда их стоматологическая клиника недоступна.'
+          title: 'Пропущенные Звонки После Часов',
+          description: 'Каждый неотвеченный звонок после 18:00 потенциально означает потерянного нового пациента. Исследования показывают, что 70% пациентов звонят конкурентам напрямую, когда не могут дозвониться в стоматологическую клинику.'
         },
         {
-          title: 'Хроническая нехватка персонала',
-          description: 'Проблема: Ваша хорошо обученная команда регистратуры постоянно перегружена повторяющимися телефонными звонками по стандартным вопросам, часам работы и простым запросам на приём.'
+          title: 'Хроническая Нехватка Персонала',
+          description: 'Ваша хорошо обученная команда администраторов постоянно перегружена повторяющимися телефонными звонками по стандартным вопросам, часам работы и простым запросам на приём.'
         },
         {
-          title: 'Длительное ожидание обратных звонков',
-          description: 'Проблема: Новым пациентам часто приходится ждать дни для обратных звонков - фатальный опыт во времена мгновенного сервиса. Каждый день ожидания снижает ваш коэффициент конверсии на 15%.'
+          title: 'Долгое Ожидание Обратных Звонков',
+          description: 'Новые пациенты часто должны ждать дни для обратных звонков - фатальный опыт во времена мгновенного сервиса. Каждый день ожидания снижает ваш коэффициент конверсии до 30%.'
+        },
+        {
+          title: 'Высокие Расходы на Внешний Колл-центр',
+          description: 'Внешние колл-центры стоят состояние и ничего не понимают в стоматологии. Пациенты сразу замечают, что говорят с незнакомцами, которые не знают вашу практику.'
+        },
+        {
+          title: 'Плохая Телефонная Доступность',
+          description: 'Постоянно занятые линии расстраивают пациентов и приводят к потерянным запросам на приём. Ценные звонки теряются особенно в часы пик.'
+        },
+        {
+          title: 'Недовольные Пациенты из-за Недоступности',
+          description: 'Пациенты сегодня ожидают немедленных ответов. Те, к кому нельзя дозвониться, теряют доверие и рекомендации. Плохие отзывы - следствие.'
         }
       ]
+    },
+    // Solution Section
+    solution: {
+      title: 'Решение: Ваш Интеллектуальный Помощник Стоматологической Практики',
+      subtitle: 'Наш ИИ-агент с глубокими знаниями стоматологии немедленно обрабатывает все запросы пациентов - по телефону и в чате на вашем сайте.',
+      features: [
+        'Мгновенные ответы на все запросы пациентов',
+        'Автоматическое бронирование приёмов круглосуточно',
+        'Глубокие стоматологические знания и объяснения лечения',
+        'Полное облегчение для вашей команды стоматологической практики',
+        'Больше времени для высококачественного лечения пациентов',
+        'Многоязычная коммуникация (100+ языков)',
+        'Интеллектуальная сортировка и перенаправление экстренных случаев',
+        'Автоматические напоминания пациентам',
+        'Интеграция с существующими системами стоматологической практики',
+        'Обучающийся ИИ - адаптируется к вашей стоматологической практике',
+        'Отслеживание пропущенных звонков',
+        'Автоматический сбор отзывов о стоматологической практике'
+      ]
+    },
+    // Features Section
+    features: {
+      title: 'Всё, что нужно вашей Стоматологической Практике',
+      subtitle: 'Комплексные ИИ-функции для современных стоматологических практик',
+      items: [
+        {
+          title: 'Доступность 24/7',
+          description: 'Отвечает на звонки и чаты круглосуточно, даже ночью и в выходные. Ваши пациенты всегда могут с вами связаться.'
+        },
+        {
+          title: 'Интеллектуальное Управление Приёмами',
+          description: 'Бронирует, изменяет и подтверждает приёмы автоматически - интеграция с вашим существующим календарём и системой стоматологической практики.'
+        },
+        {
+          title: 'Полностью Многоязычный',
+          description: 'Идеально общается на любом языке - немецкий, английский, турецкий, арабский, русский, польский и более 100 других языков для максимального охвата пациентов.'
+        },
+        {
+          title: 'Сбор Данных Пациентов',
+          description: 'Автоматически сохраняет имя, контактные данные и предпочтения по приёмам в вашей CRM или системе стоматологической практики.'
+        },
+        {
+          title: 'Автоматические Напоминания',
+          description: 'Автоматически отправляет SMS и электронные письма о приёмах - снижает пропуски до 70%.'
+        },
+        {
+          title: 'Перенаправление Экстренных Случаев',
+          description: 'Интеллектуально распознаёт реальные стоматологические экстренные случаи и немедленно перенаправляет на ваш экстренный номер или дежурную службу.'
+        },
+        {
+          title: 'Стоматологическая Экспертиза',
+          description: 'Отвечает на сложные вопросы о стоматологических процедурах, послеоперационном уходе и профилактике - на основе последних стоматологических баз данных.'
+        },
+        {
+          title: 'Глубокое Обучение',
+          description: 'Непрерывно изучает специфические процессы, методы лечения и логику планирования вашей стоматологической практики - становится точнее каждый день.'
+        },
+        {
+          title: 'Стоматологическая Консультация',
+          description: 'Объясняет процедуры стоматологического лечения, отвечает на вопросы о стоимости и оптимально готовит пациентов к приёму у стоматолога - по-человечески и эмпатично.'
+        }
+      ]
+    },
+    // Integration Section
+    integration: {
+      title: 'Работает с ЛЮБЫМ Программным Обеспечением Стоматологической Практики - Гарантированно',
+      subtitle: 'Никакой смены системы. Никаких сложных интерфейсов. Готов к использованию немедленно.',
+      steps: [
+        {
+          title: 'ИИ-агент идеально собирает данные',
+          description: 'Ваш интеллектуальный помощник собирает всю важную информацию: имя, контактные данные, запрос на приём, предпочтительный стоматолог и причина лечения - структурированно и полно.'
+        },
+        {
+          title: 'Центральный обзор для вашей команды',
+          description: 'Все запросы на приёмы чётко отображаются в вашей панели управления, доставляются по электронной почте или попадают прямо в вашу CRM (Google Calendar, HubSpot, Excel).'
+        },
+        {
+          title: 'Вы сохраняете контроль',
+          description: 'Ваша команда проверяет запросы и подтверждает приёмы одним щелчком в вашем привычном программном обеспечении стоматологической практики.'
+        }
+      ],
+      standardTitle: 'Стандартная Интеграция (Немедленно доступна)',
+      standardSubtitle: 'Совместимо со всеми распространёнными системами стоматологических практик:',
+      premiumTitle: 'Премиум-опция: Прямая Интеграция',
+      premiumDescription: 'Для современных облачных систем (CGM LIFE, DocCirrus) мы предлагаем полностью автоматическую синхронизацию по запросу - приёмы появляются прямо в вашем программном обеспечении стоматологической практики без ручного переноса.',
+      advantageTitle: '⚡ Преимущество Нашего Подхода',
+      advantageDescription: 'В то время как другие решения терпят неудачу из-за устаревших интерфейсов, DentalBotPro работает универсально - независимо от того, насколько старо или современно ваше программное обеспечение стоматологической практики. Вы получаете структурированные, высококачественные данные пациентов без технического риска или IT-проектов.',
+      advantageExtra: 'Типичная экономия времени: Подтверждение запроса на приём в вашем программном обеспечении занимает 10 секунд - телефонный звонок занял бы 5 минут. Вы экономите 90% времени при сохранении полного контроля.'
+    },
+    // How it works Section
+    howItWorks: {
+      title: 'Как это Работает',
+      subtitle: 'Ваш персональный ИИ-помощник всего за 3 шага',
+      steps: [
+        {
+          title: 'Настройка за 72 часа',
+          description: 'Мы настраиваем вашего персонального ИИ-помощника специально для вашей стоматологической практики и ваших рабочих процессов.'
+        },
+        {
+          title: 'Интеграция с вашей стоматологической практикой',
+          description: 'Подключение к телефону, сайту и опционально к вашему существующему программному обеспечению стоматологической практики для бесшовных рабочих процессов.'
+        },
+        {
+          title: 'Готов к использованию немедленно',
+          description: 'Ваш ИИ-помощник запускается и облегчает работу вашей команды с 1-го дня - измеримые результаты с первого часа.'
+        }
+      ]
+    },
+    // Pricing Section
+    pricing: {
+      title: 'Прозрачные Цены - Никаких Скрытых Расходов',
+      subtitle: 'ИИ-агенты с различными уровнями стоматологической экспертизы для каждого размера стоматологической практики',
+      plans: [
+        {
+          name: 'Pro',
+          price: '149€',
+          period: 'в месяц',
+          setupFee: 'Цена настройки: 299€',
+          setupTime: 'Время настройки: 72 часа',
+          features: [
+            'Чат-бот сайта',
+            'Бронирование приёмов 24/7',
+            'Основные стоматологические вопросы',
+            'Многоязычная поддержка',
+            'Интеграция электронной почты',
+            'Автоматические напоминания'
+          ],
+          cta: 'Купить сейчас',
+          popular: false
+        },
+        {
+          name: 'Premium',
+          price: '299€',
+          period: 'в месяц',
+          setupFee: 'Цена настройки: 499€',
+          setupTime: 'Время настройки: 1 неделя',
+          features: [
+            'Всё из плана Pro',
+            'Голосовые возможности: ИИ может говорить',
+            'Расширенное стоматологическое консультирование',
+            'Первичная оценка симптомов',
+            'Интеллектуальное перенаправление экстренных случаев',
+            'Интеграция CRM'
+          ],
+          cta: 'Купить сейчас',
+          popular: true,
+          badge: 'ПОПУЛЯРНЫЙ'
+        },
+        {
+          name: 'Enterprise',
+          price: '499€',
+          period: 'в месяц',
+          setupFee: 'Цена настройки: 999€',
+          setupTime: 'Время настройки: 2-4 недели',
+          features: [
+            'Всё из плана Premium',
+            'Полная интеграция системы стоматологической практики',
+            'Продвинутый стоматологический ИИ со специализированными знаниями',
+            'Управление несколькими площадками',
+            'Персональный менеджер аккаунта',
+            'Приоритетная поддержка',
+            'Индивидуальные настройки'
+          ],
+          cta: 'Купить сейчас',
+          popular: false
+        }
+      ],
+      note: 'Все цены указаны без учёта законного НДС. Никакого минимального срока. Ежемесячная отмена.'
+    },
+    // Benefits Section
+    benefits: {
+      title: 'Ваши Преимущества с DentalBotPro',
+      subtitle: 'Измеримые улучшения для вашей стоматологической практики',
+      items: [
+        {
+          title: 'Больше Новых Пациентов',
+          description: 'Благодаря доступности 24/7 и профессиональному первичному уходу вы измеримо получаете больше новых пациентов.'
+        },
+        {
+          title: 'Более Высокая Удовлетворённость Пациентов',
+          description: 'Мгновенные, компетентные ответы приводят к более довольным пациентам и лучшим оценкам.'
+        },
+        {
+          title: 'Облегчение Команды',
+          description: 'Ваш персонал может сосредоточиться на важных задачах вместо повторяющихся телефонных звонков.'
+        },
+        {
+          title: 'Экономия Расходов',
+          description: 'Снижайте расходы на персонал для телефонной поддержки при одновременном улучшении качества обслуживания.'
+        }
+      ]
+    },
+    // Demo Section
+    demo: {
+      title: 'Испытайте DentalBotPro в Действии в Прямом Эфире',
+      subtitle: 'Посмотрите в персональной демонстрации, как наш ИИ-помощник революционизирует вашу стоматологическую практику и помогает вам завоевать и обслуживать больше пациентов.',
+      placeholder: 'Здесь будет отображено ваше персонализированное демонстрационное видео DentalBotPro',
+      cta: 'Забронировать бесплатную демонстрацию сейчас'
     },
     // Contact Section
     contact: {
