@@ -280,13 +280,13 @@ const Features = () => {
       </section>
 
       {/* HOW IT WORKS SECTION - 3 Steps with Flow */}
-      <section ref={howItWorksRef} id="so-gehts" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+      <section ref={howItWorksRef} id="so-gehts" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 relative overflow-hidden">
         {/* Particle Background */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full"
+              className="absolute w-2 h-2 bg-gray-400/30 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -313,13 +313,13 @@ const Features = () => {
           >
             <motion.h2 
               variants={itemVariants} 
-              className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent mb-6"
+              className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-accent-green-600 to-blue-600 bg-clip-text text-transparent mb-6"
             >
               {t('howItWorks.title')}
             </motion.h2>
             <motion.p 
               variants={itemVariants} 
-              className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto"
             >
               {t('howItWorks.subtitle')}
             </motion.p>
@@ -370,10 +370,10 @@ const Features = () => {
                   </div>
                 </motion.div>
 
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>

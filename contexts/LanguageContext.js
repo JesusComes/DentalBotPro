@@ -138,7 +138,7 @@ const translations = {
     },
     // How it works Section
     howItWorks: {
-      title: 'So einfach geht\'s',
+      title: "So einfach geht's",
       subtitle: 'In nur 3 Schritten zu Ihrem persönlichen KI-Assistenten',
       steps: [
         {
