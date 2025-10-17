@@ -291,7 +291,6 @@ const translations = {
     }
   },
   en: {
-    // Header/Navigation
     nav: {
       home: 'Home',
       solution: 'Solution',
@@ -300,7 +299,7 @@ const translations = {
       contact: 'Contact',
       about: 'About Us'
     },
-    // Hero Section
+        // Hero Section
     hero: {
       title: 'Never miss a',
       titleHighlight: 'patient call!',
