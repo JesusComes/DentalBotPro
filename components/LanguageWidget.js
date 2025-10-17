@@ -25,7 +25,7 @@ export default function LanguageWidget() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 rounded-lg glass-brutal hover:scale-105 transition-all duration-300 text-white"
+        className="flex items-center space-x-2 px-4 py-2 rounded-lg glass-brutal hover:scale-105 transition-all duration-300 text-dental-blue-800 border border-dental-blue-200/50 shadow-lg"
       >
         <span className="text-lg">{currentLang.flag}</span>
         <span className="hidden sm:block font-medium">{currentLang.name}</span>
@@ -33,19 +33,19 @@ export default function LanguageWidget() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 py-2 w-48 glass-brutal rounded-xl shadow-2xl z-50">
+        <div className="absolute top-full right-0 mt-2 py-2 w-48 glass-brutal rounded-xl shadow-2xl z-50 border border-dental-blue-200/50">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full px-4 py-3 text-left hover:bg-white/10 transition-colors duration-200 flex items-center space-x-3 ${
-                currentLanguage === lang.code ? 'bg-white/10 border-l-4 border-dental-blue-500' : ''
+              className={`w-full px-4 py-3 text-left hover:bg-dental-blue-100/30 transition-colors duration-200 flex items-center space-x-3 ${
+                currentLanguage === lang.code ? 'bg-dental-blue-100/40 border-l-4 border-dental-green-500' : ''
               }`}
             >
               <span className="text-lg">{lang.flag}</span>
-              <span className="font-medium text-white">{lang.name}</span>
+              <span className="font-medium text-dental-blue-800">{lang.name}</span>
               {currentLanguage === lang.code && (
-                <i className="fas fa-check text-dental-blue-400 ml-auto"></i>
+                <i className="fas fa-check text-dental-green-500 ml-auto"></i>
               )}
             </button>
           ))}

@@ -84,55 +84,55 @@ export default function Problems() {
       icon: ModernIcons.PhoneMissed,
       title: t('problems.missed_calls.title'),
       description: t('problems.missed_calls.description'),
-      color: 'from-red-500 to-red-600'
+      color: 'from-dental-blue-500 to-dental-blue-600'
     },
     {
       icon: ModernIcons.Users,
       title: t('problems.staff_shortage.title'),
       description: t('problems.staff_shortage.description'),
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-dental-green-500 to-dental-green-600'
     },
     {
       icon: ModernIcons.Clock,
       title: t('problems.callback_delays.title'),
       description: t('problems.callback_delays.description'),
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-dental-teal-500 to-dental-teal-600'
     },
     {
       icon: ModernIcons.CalendarX,
       title: t('problems.unnoticed_cancellations.title'),
       description: t('problems.unnoticed_cancellations.description'),
-      color: 'from-green-500 to-green-600'
+      color: 'from-dental-blue-600 to-dental-green-500'
     },
     {
       icon: ModernIcons.Language,
       title: t('problems.language_barriers.title'),
       description: t('problems.language_barriers.description'),
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-dental-green-600 to-dental-teal-500'
     },
     {
       icon: ModernIcons.Calendar,
       title: t('problems.appointment_chaos.title'),
       description: t('problems.appointment_chaos.description'),
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'from-dental-teal-600 to-dental-blue-500'
     },
     {
       icon: ModernIcons.UserX,
       title: t('problems.high_no_show.title'),
       description: t('problems.high_no_show.description'),
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-dental-blue-700 to-dental-green-600'
     },
     {
       icon: ModernIcons.PieChart,
       title: t('problems.inefficient_time.title'),
       description: t('problems.inefficient_time.description'),
-      color: 'from-pink-500 to-pink-600'
+      color: 'from-dental-green-700 to-dental-teal-600'
     },
     {
       icon: ModernIcons.AlertCircle,
       title: t('problems.lost_emergency.title'),
       description: t('problems.lost_emergency.description'),
-      color: 'from-red-600 to-red-700'
+      color: 'from-dental-teal-700 to-dental-blue-600'
     }
   ]
 
@@ -140,10 +140,10 @@ export default function Problems() {
     <section 
       id="probleme"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-red-50/30 via-orange-50/20 to-yellow-50/30 relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-dental-blue-50/30 via-dental-green-50/20 to-white/30 relative overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-100/10 via-transparent to-orange-100/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-dental-blue-100/10 via-transparent to-dental-green-100/10"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Title */}
@@ -220,10 +220,10 @@ export default function Problems() {
         </div>
       </div>
 
-      {/* Floating warning elements */}
-      <div className="absolute top-20 right-20 w-24 h-24 border-2 border-red-300/30 rotate-45 float-slow"></div>
-      <div className="absolute bottom-20 left-20 w-16 h-16 bg-orange-200/20 rounded-full float-medium"></div>
-      <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-yellow-300/40 rotate-12 float-fast"></div>
+      {/* Floating beautiful elements */}
+      <div className="absolute top-20 right-20 w-24 h-24 border-2 border-dental-blue-300/30 rotate-45 float-slow"></div>
+      <div className="absolute bottom-20 left-20 w-16 h-16 bg-dental-green-200/20 rounded-full float-medium"></div>
+      <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-dental-teal-300/40 rotate-12 float-fast"></div>
     </section>
   )
 }

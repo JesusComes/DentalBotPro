@@ -99,57 +99,57 @@ export default function Solution() {
     {
       icon: SolutionIcons.CalendarCheck,
       title: t('solution.features.auto_booking'),
-      color: 'from-dental-teal-500 to-dental-teal-600'
+      color: 'from-dental-green-500 to-dental-green-600'
     },
     {
       icon: SolutionIcons.Heart,
       title: t('solution.features.dental_knowledge'),
-      color: 'from-dental-purple-500 to-dental-purple-600'
+      color: 'from-dental-teal-500 to-dental-teal-600'
     },
     {
       icon: SolutionIcons.UserGroup,
       title: t('solution.features.team_relief'),
-      color: 'from-dental-orange-500 to-dental-orange-600'
+      color: 'from-dental-blue-600 to-dental-green-500'
     },
     {
       icon: SolutionIcons.Clock,
       title: t('solution.features.more_time'),
-      color: 'from-dental-pink-500 to-dental-pink-600'
+      color: 'from-dental-green-600 to-dental-teal-500'
     },
     {
       icon: SolutionIcons.Globe,
       title: t('solution.features.multilingual'),
-      color: 'from-dental-blue-500 to-dental-teal-500'
+      color: 'from-dental-teal-600 to-dental-blue-500'
     },
     {
       icon: SolutionIcons.Shield,
       title: t('solution.features.intelligent_triage'),
-      color: 'from-dental-teal-500 to-dental-purple-500'
+      color: 'from-dental-blue-700 to-dental-green-600'
     },
     {
       icon: SolutionIcons.Bell,
       title: t('solution.features.auto_reminders'),
-      color: 'from-dental-purple-500 to-dental-orange-500'
+      color: 'from-dental-green-700 to-dental-teal-600'
     },
     {
       icon: SolutionIcons.Connector,
       title: t('solution.features.integration'),
-      color: 'from-dental-orange-500 to-dental-pink-500'
+      color: 'from-dental-teal-700 to-dental-blue-600'
     },
     {
       icon: SolutionIcons.Brain,
       title: t('solution.features.learning_ai'),
-      color: 'from-dental-pink-500 to-dental-blue-500'
+      color: 'from-dental-blue-800 to-dental-green-700'
     },
     {
       icon: SolutionIcons.Phone,
       title: t('solution.features.call_followup'),
-      color: 'from-dental-blue-600 to-dental-teal-600'
+      color: 'from-dental-green-800 to-dental-teal-700'
     },
     {
       icon: SolutionIcons.Star,
       title: t('solution.features.review_collection'),
-      color: 'from-dental-teal-600 to-dental-purple-600'
+      color: 'from-dental-teal-800 to-dental-blue-700'
     }
   ]
 
@@ -157,10 +157,10 @@ export default function Solution() {
     <section 
       id="loesung"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-green-50/40 via-teal-50/30 to-blue-50/40 relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-dental-green-50/40 via-dental-blue-50/30 to-white/40 relative overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-dental-blue-100/10 via-dental-teal-100/10 to-dental-purple-100/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-dental-blue-100/10 via-dental-green-100/10 to-dental-teal-100/10"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Title */}
@@ -214,7 +214,7 @@ export default function Solution() {
         <div className={`text-center mt-20 section-fade ${isVisible ? 'visible' : ''}`}>
           <div className="glass-brutal rounded-3xl p-10 max-w-4xl mx-auto relative overflow-hidden">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-dental-blue-100/20 via-dental-teal-100/20 to-dental-purple-100/20 rounded-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-dental-blue-100/20 via-dental-green-100/20 to-dental-teal-100/20 rounded-3xl"></div>
             
             <div className="relative z-10">
               <h3 className="text-3xl font-bold gradient-text-brutal mb-6">
@@ -252,9 +252,9 @@ export default function Solution() {
 
       {/* Floating solution elements */}
       <div className="absolute top-20 left-20 w-32 h-32 border-2 border-dental-blue-300/30 rotate-45 float-slow"></div>
-      <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-br from-dental-teal-200/20 to-dental-purple-200/20 rounded-2xl rotate-12 float-medium"></div>
-      <div className="absolute top-1/2 left-10 w-16 h-16 border border-dental-orange-300/40 rounded-full float-fast"></div>
-      <div className="absolute top-1/3 right-10 w-20 h-20 bg-dental-pink-200/10 rounded-full blur-xl float-slow"></div>
+      <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-br from-dental-green-200/20 to-dental-teal-200/20 rounded-2xl rotate-12 float-medium"></div>
+      <div className="absolute top-1/2 left-10 w-16 h-16 border border-dental-blue-300/40 rounded-full float-fast"></div>
+      <div className="absolute top-1/3 right-10 w-20 h-20 bg-dental-green-200/10 rounded-full blur-xl float-slow"></div>
     </section>
   )
 }

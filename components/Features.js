@@ -61,60 +61,60 @@ export default function Features() {
       icon: FeatureIcons.Clock,
       title: t('features.availability.title'),
       description: t('features.availability.description'),
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-dental-blue-500 to-dental-blue-600'
     },
     {
       icon: FeatureIcons.CalendarCheck,
       title: t('features.appointment_management.title'),
       description: t('features.appointment_management.description'),
-      color: 'from-green-500 to-green-600'
+      color: 'from-dental-green-500 to-dental-green-600'
     },
     {
       icon: FeatureIcons.Globe,
       title: t('features.multilingual.title'),
       description: t('features.multilingual.description'),
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-dental-teal-500 to-dental-teal-600'
     },
     {
       icon: FeatureIcons.Database,
       title: t('features.data_capture.title'),
       description: t('features.data_capture.description'),
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'from-dental-blue-600 to-dental-green-500'
     },
     {
       icon: FeatureIcons.Bell,
       title: t('features.auto_reminders.title'),
       description: t('features.auto_reminders.description'),
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-dental-green-600 to-dental-teal-500'
     },
     {
       icon: FeatureIcons.Emergency,
       title: t('features.emergency_routing.title'),
       description: t('features.emergency_routing.description'),
-      color: 'from-red-500 to-red-600'
+      color: 'from-dental-teal-600 to-dental-blue-500'
     },
     {
       icon: FeatureIcons.Medical,
       title: t('features.dental_expertise.title'),
       description: t('features.dental_expertise.description'),
-      color: 'from-teal-500 to-teal-600'
+      color: 'from-dental-blue-700 to-dental-green-600'
     },
     {
       icon: FeatureIcons.Brain,
       title: t('features.deep_learning.title'),
       description: t('features.deep_learning.description'),
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-dental-green-700 to-dental-teal-600'
     },
     {
       icon: FeatureIcons.Comments,
       title: t('features.dental_consulting.title'),
       description: t('features.dental_consulting.description'),
-      color: 'from-cyan-500 to-cyan-600'
+      color: 'from-dental-teal-700 to-dental-blue-600'
     }
   ]
 
   return (
-    <section id="funktionen" className="py-24 bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-purple-50/50">
+    <section id="funktionen" className="py-24 bg-gradient-to-br from-dental-blue-50/50 via-dental-green-50/30 to-white/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black mb-6 gradient-text-brutal">
